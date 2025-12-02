@@ -1,1455 +1,521 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="id" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>arie</title>
-
-  <!--
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
-
-  <!--
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-
-  <!--
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <title>Arie Anggono - Sr. IT Analyst</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#10b981',
+            secondary: '#1a1a2e',
+            accent: '#34d399',
+            dark: '#0d1117',
+            card: '#161b22'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Segoe UI', system-ui, sans-serif; }
+    .gradient-text { background: linear-gradient(135deg, #10b981, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .gradient-bg { background: linear-gradient(135deg, #0d1117 0%, #1a1a2e 50%, #064e3b 100%); }
+    .glass { background: rgba(22, 27, 34, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(52, 211, 153, 0.1); }
+    .skill-bar { background: linear-gradient(90deg, #10b981, #34d399); }
+    .card-hover { transition: all 0.3s ease; }
+    .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(16, 185, 129, 0.2); }
+    .hero-glow { position: absolute; width: 400px; height: 400px; background: radial-gradient(circle, rgba(16,185,129,0.3) 0%, transparent 70%); filter: blur(60px); }
+  </style>
 </head>
-
-<body>
-
-  <!--
-    - #MAIN
-  -->
-
-  <main>
-
-    <!--
-      - #SIDEBAR
-    -->
-
-    <aside class="sidebar" data-sidebar>
-
-      <div class="sidebar-info">
-
-        <!-- <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.png" alt="Vivek Singh" width="80">
-        </figure> -->
-
-        <div class="info-content">
-          <h1 class="name" title="arie">arie anggono</h1>
-
-          <p class="title">ABAP - Sr. IT Analyst</p>
-          <hr>
-          <p class="title">Machine Learning & AI Enthusiast</p>
-        </div>
-
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
-
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
-
+<body class="bg-dark text-gray-200">
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-dark/90 backdrop-blur border-b border-primary/20">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#hero" class="text-xl font-bold gradient-text">Profile</a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#hero" class="hover:text-primary transition">Home</a>
+        <a href="#about" class="hover:text-primary transition">About</a>
+        <a href="#resume" class="hover:text-primary transition">Resume</a>
+        <a href="#portfolio" class="hover:text-primary transition">Portfolio</a>
+        <a href="#contact" class="px-4 py-2 border border-primary text-primary rounded-full hover:bg-primary hover:text-dark transition">Contact</a>
       </div>
-
-      <div class="sidebar-info_more">
-
-        <div class="separator"></div>
-
-        <ul class="contacts-list">
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-
-              <!--               <a href="mailto:anggono.smg@gmail.com" class="contact-link">anggono.smg@gmail.com</a>  -->
-              <a href="mailto:anggono.smg@gmail.com?subject=Interest Profile&body=Hi Arie " target="_blank"
-                style="text-decoration: none;">
-                <button
-                  style="padding: 10px 20px; background-color: #D44638; color: white; border: none; border-radius: 5px; cursor: pointer;">
-                  Kirim Email
-                </button>
-              </a>
-
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Phone</p>
-
-              <!--               <a href="MOB no: 081228018866" class="contact-link">081228018866</a> -->
-              <a href="https://wa.me/6281228018866" target="_blank" style="text-decoration: none;">
-                <button
-                  style="padding: 10px 20px; background-color: #25D366; color: white; border: none; border-radius: 5px; cursor: pointer;">
-                  WhatsApp
-                </button>
-              </a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-
-              <address>Semarang, Indonesia</address>
-            </div>
-
-          </li>
-
-        </ul>
-
-        <div class="separator"></div>
-
-        <ul class="social-list">
-
-          <!-- <li class="social-item">
-            <a href="#" class="social-link">
-              <ion-icon name="logo-facebook"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="#" class="social-link">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a>
-          </li> -->
-
-          <li class="social-item">
-            <a href="#" class="social-link">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-        </ul>
-
-      </div>
-
-    </aside>
-
-
-
-
-
-    <!--
-      - #main-content
-    -->
-
-    <div class="main-content">
-
-      <!--
-        - #NAVBAR
-      -->
-
-      <nav class="navbar">
-
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
-          </li>
-
-          <!-- <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Blog</button>
-          </li> -->
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
-          </li>
-
-        </ul>
-
-      </nav>
-
-
-
-
-
-      <!--
-        - #ABOUT
-      -->
-
-      <article class="about  active" data-page="about">
-
-        <header>
-          <h2 class="h2 article-title">Tentang Saya</h2>
-        </header>
-
-        <section class="about-text">
-          <p>
-            Halo,
-            Saya seorang IT System Analyst dengan pengalaman lebih dari 10 tahun di bidang pengembangan dan pengelolaan
-            sistem ERP. Selama 5 tahun pertama, saya fokus pada customisasi ERP dengan aplikasi existing dan legacy
-            berbasis VB6. Kemudian, selama 5 tahun terakhir, saya berkontribusi pada migrasi ERP ke SAP S/4HANA,
-            memastikan proses berjalan lancar dan sistem berjalan optimal.
-
-            Keahlian teknis yang saya kuasai meliputi:
-
-            ABAP: Pengembangan dan optimasi program, termasuk OData Service dan ALV reporting.
-            SQL: Query kompleks untuk kebutuhan analisis data dan integrasi database.
-            OData Service: Integrasi API modern untuk mendukung interoperabilitas aplikasi.
-            ERP Optimization: Analisis dan peningkatan performa modul-modul ERP untuk mendukung proses bisnis
-            perusahaan.
-          </p>
-
-          <section class="timeline">
-
-                        <div class="title-wrapper">
-              <div class="icon-box">
-                <ion-icon name="book-outline"></ion-icon>
-              </div>
-
-              <h3 class="h3">Fullstack Developer</h3>
-            </div>
-
-            <ol class="timeline-list">
-
-              <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">Planning ERP</h4>
-                <span>Merancang Kebutuhan sistem untuk di implementaiskan
-                </span>
-              </li>
-
-              <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">Developing</h4>
-                <span>Membangun Sistem ERP Customize (framework flask) sesuai dengan kebutuhan bisnis perusahaan</span>
-              </li>
-
-              <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">Implementator</h4>
-                <span>Testing , Implementasi dan perbaiki bug pada ERP untuk sustainability system</span>
-              </li>
-
-            </ol>
-
-
-
-            <div class="title-wrapper">
-              <div class="icon-box">
-                <ion-icon name="book-outline"></ion-icon>
-              </div>
-
-              <h3 class="h3">ABAPer (SAP ABAP Developer):</h3>
-            </div>
-
-            <ol class="timeline-list">
-
-              <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">ABAP Programming</h4>
-                <span>Menguasai sintaks dan struktur bahasa ABAP untuk pengembangan modul dan laporan di SAP.
-                </span>
-              </li>
-
-              <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">ALV Reporting </h4>
-                <span>Membuat laporan menggunakan ALV Grid/Tree untuk menyajikan data secara dinamis dan
-                  interaktif.</span>
-              </li>
-
-              <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">Data Dictionary</h4>
-                <span>Mengelola elemen data seperti tabel, struktur, domain, dan view dalam SAP.</span>
-              </li>
-
-            </ol>
-
-          </section>
-
-          <!-- <p>
-            Senior IT Analyst dengan pengalaman lebih dari 10 tahun di sektor manufaktur, saya memiliki rekam jejak yang terbukti dalam merancang, mengimplementasikan dan optimalisasi sistem serta infrasuktur TI untuk mendukung efisiensi operasioal menjadi agile dan maksimal. Fokus pada analisis kebutuhan bisnis dibidang manufaktur, saya telah berhasil mengembangkan solusi end-to-end dengan integrasi teknologi cloud computing , data anlytics serta DevOps
-          </p> -->
-          <!--           <p>
-            Halo saya seorang Senior Full Stack Developer dengan lebih dari 10 tahun pengalaman, antusias dalam mengembangkan solusi berbasis Machine Learning (ML) untuk menyelesaikan masalah bisnis. 
-            Memiliki kemampuan dalam analisis, desain pipeline, dan optimasi model ML. 
-            Berpengalaman dalam forecasting, pengelompokan data, dan pengintegrasian solusi ML/DL 
-            ke dalam sistem baik supply chain, permintaan produk, dan analisis pelanggan atapun untuk kebutuhan financial technology
-          </p> -->
-
-
-        </section>
-
-
-        <!--
-          - service
-        -->
-
-        <!-- <section class="service">
-
-          <h3 class="h3 service-title">Aktivitas</h3>
-
-          <ul class="service-list">
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/webapp.svg
-                " alt="design icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">SAP HANA Developer</h4>
-                <p class="service-item-text">
-                  1. Smartforms
-                </p> <br>
-                <p class="service-item-text">
-                  2. ABAP Development Reporting (ALV, CLALV)
-                </p> <br>
-                <p class="service-item-text">
-                  3. Analyst Data and Dashboarding (Streamlit)
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/webapp.svg
-                " alt="design icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Backend Development</h4>
-
-                <p class="service-item-text">
-                  1. Membangun dan mengelola API untuk pengolahan data model ML/DL menggunakan Python (Flask/FastAPI)
-                  atau Node.js.
-                </p> <br>
-                <p class="service-item-text">
-                  2. Mengintegrasikan model ML/DL ke dalam aplikasi web atau sistem backend.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/webapp2.svg" alt="Web development icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Frontend Development</h4>
-
-                <p class="service-item-text">
-                  1. Merancang antarmuka pengguna interaktif untuk visualisasi data hasil model ML/DL menggunakan
-                  Next.js.
-                </p><br>
-                <p class="service-item-text">
-                  2. Menyediakan fitur real-time untuk analisis data berbasis model.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/webapp3.svg" alt="mobile app icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Data Pipeline Management</h4>
-                <p class="service-item-text">
-                  1. Mendesain pipeline data untuk preprocessing, pelatihan model, dan deployment.
-                </p><br>
-                <p class="service-item-text">
-                  2. Menggunakan framework seperti TensorFlow Extended (TFX) atau MLflow.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/webapp4.svg" alt="camera icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Model Training & Deployment
-                </h4>
-                <p class="service-item-text">
-                  1. Melatih dan mengoptimalkan model ML/DL pada sistem berbasis multi-GPU dengan CUDA.
-                </p><br>
-                <p class="service-item-text">
-                  2. Mengimplementasikan solusi cloud-based seperti AWS SageMaker atau Google AI Platform.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/webapp4.svg" alt="camera icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Model Monitoring & Optimization
-                </h4>
-                <p class="service-item-text">
-                  1. Memantau performa model dengan tools seperti TensorBoard, WandB, atau Neptune.
-                </p><br>
-                <p class="service-item-text">
-                  2. Memperbaiki model dengan retrain, tuning hyperparameter, atau validasi ulang data.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/webapp4.svg" alt="camera icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">DevOps Integration
-                </h4>
-                <p class="service-item-text">
-                  1. Menerapkan CI/CD pipeline untuk aplikasi berbasis ML/DL.
-                </p><br>
-                <p class="service-item-text">
-                  2. Mengelola containerisasi dengan Docker untuk deployment model yang scalable.
-                </p>
-              </div>
-
-            </li>
-
-
-          </ul>
-
-        </section> -->
-
-
-        <!--
-          - testimonials
-        -->
-
-        <section class="testimonials">
-
-
-
-        </section>
-
-
-        <!--
-          - testimonials modal
-        -->
-
-        <div class="modal-container" data-modal-container>
-
-          <div class="overlay" data-overlay></div>
-
-          <section class="testimonials-modal">
-
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Vivek" width="80" data-modal-img>
-              </figure>
-
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
-            </div>
-
-            <div class="modal-content">
-
-              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
-
-              <time datetime="2021-06-14">14 June, 2021</time>
-
-              <div data-modal-text>
-                <p>
-                  Vivek was hired to create a corporate identity. We were very pleased with the work done. She has a
-                  lot of experience
-                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                  consectetur adipiscing
-                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                </p>
-              </div>
-
-            </div>
-
-          </section>
-
-        </div>
-
-
-        <!--
-          - clients
-        -->
-
-        <section class="clients">
-
-
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #RESUME
-      -->
-
-      <article class="resume" data-page="resume">
-
-        <header>
-          <h2 class="h2 article-title">Resume</h2>
-        </header>
-
-
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Pengalaman</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Sr. IT Programmer - PT. Hanchen Industrial Indonesia</h4>
-
-              <span>November 2024 — December 2025</span>
-
-              <p class="timeline-text">
-                1. Fullstack Developer Customize ERP<br>
-                2. ERP Implementator <br>
-                3. AI Agent ollama on local <br>
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Sr. IT Analyst - PT. Asia Pacific Fibers</h4>
-
-              <span>November 2011 — November 2024</span>
-
-              <p class="timeline-text">
-                1. Backend Development <br>
-                2. Front End Development <br>
-                3. ABAPer <br>
-                4. Model Training & Development <br>
-                5. Model monitoring & Optimization <br>
-                6. Experiment Management <br>
-                7. Collaboration & Reporting <br>
-                8. DevOps Integration <br>
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">IT Master Control - PT. TVKU Semarang</h4>
-
-              <span>Maret 2008 — November 2011</span>
-
-              <p class="timeline-text">
-                1. Database Administrator <br>
-                2. Programmer <br>
-                3. Room Control instrument <br>
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Assisten Dosen</h4>
-
-              <span>September 2005 — Februari 2007</span>
-
-              <p class="timeline-text">
-                1. Membantu Dosen dalam menyampaikan materi perkuliahan pada lab komputer<br>
-                2. Kroscek Absensi  
-              </p>
-
-            </li>
-
-          </ol>
-
-        </section>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Pendidikan</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">S1 - Teknik Informatika</h4>
-
-              <span>September 2008 - April 2011</span>
-
-              <p class="timeline-text">
-                - Universitas Dian Nuswantoro Semarang - Lulus<br>
-                <span> <a
-                    href="https://pddikti.kemdiktisaintek.go.id/detail-mahasiswa/huiobbuF_p7J0bcIKLKueGE9QR0lFtblcBA664p6jda7TfrlO_COXxrlUP8KFB-v8yQhYA=="
-                    target="_blank" title="Klik untuk melihat detail di PDDIKTI"
-                    style="color: yellow; text-decoration: none;">
-                    link PDDIKTI - <i>(refresh jika load data lama)</i>
-                  </a> </span>
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">D3 - Teknik Informatika</h4>
-
-              <span>September 2003 — April 2007</span>
-
-              <p class="timeline-text">
-                - Universitas Dian Nuswantoro Semarang - Lulus <br>
-                <span> <a
-                    href="https://pddikti.kemdiktisaintek.go.id/detail-mahasiswa/vxuFYy0BUwrsJiIB43SP1Svkwn5JFaSazzdXHOz5KUl0c0uNpP8TBOjs1l-IXGscw7MNIQ=="
-                    target="_blank" title="Klik untuk melihat detail di PDDIKTI"
-                    style="color: yellow; text-decoration: none;">
-                    link PDDIKTI - <i>(refresh jika load data lama)</i>
-                  </a> </span>
-              </p>
-
-            </li>
-
-          </ol>
-
-        </section>
-
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Achievement</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">ERP Solution</h4>
-              <span>1. Merancang, Development dan Implemetasi Custom ERP
-              </span>
-            </li>
-
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">SAP S/4 HANA</h4>
-              <span>1. Migrasi ERP dari aplikasi legacy tanpa downtime besar</span>
-              <span>2. Develop lebih dari 20 program & enhancement ABAP utk operasi bisnis</span>
-              <span>3. Mengurangi pekerjaan manual hinggal 70% dgn otomatisasi workflow proses bisnis</span>
-            </li>
-
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">IT Support</h4>
-              <span>1. Memberikan dukungan teknis kritikal dengan tingkat pencapaian SLA >96%</span>
-              <span>2. General Support untuk mikrotik dan manage bandwith</span>
-            </li>
-
-          </ol>
-
-
-        </section>
-
-
-
-        <section class="skill">
-
-          <h3 class="h3 skills-title">Teknikal Skill</h3>
-
-          <ul class="skills-list content-card">
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Python Ecosystem (Flask , Streamlit, Reflex) Odoo ERP LGPL-3</h5>
-                <data value="90">90%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 90%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">SQL Syntax</h5>
-                <data value="95">95%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 95%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">SAP 4 HANA - (MM,PP and SD Module)</h5>
-                <data value="65">65%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 65%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">ABAPer (SAP GUI , FIORI)</h5>
-                <data value="70">60%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
-            </li>
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">IT Infrastructure</h5>
-                <data value="60">40%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 60%;"></div>
-              </div>
-            </li>
-
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Web Development (PHP)</h5>
-                <data value="80">75%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
-            </li>
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">DevOps (Docker , NextJS , MongoDB [NoSQL])</h5>
-                <data value="80">80%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
-            </li>
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Machine Learning, Blockchain , AI</h5>
-                <data value="70">70%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
-            </li>
-
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Rust (new learning)</h5>
-                <data value="55">30%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 30%;"></div>
-              </div>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #PORTFOLIO
-      -->
-
-      <article class="portfolio" data-page="portfolio">
-
-        <header>
-          <h2 class="h2 article-title">Portfolio</h2>
-        </header>
-
-        <section class="projects">
-
-          <ul class="filter-list">
-
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-
-            <!-- <li class="filter-item">
-              <button data-filter-btn>Security Analyst</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Security Auditor</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Network Engineer</button>
-            </li> -->
-
-          </ul>
-
-          <div class="filter-select-box">
-
-            <button class="filter-select" data-select>
-
-              <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
-            </button>
-
-            <ul class="select-list">
-
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-
-
-
-            </ul>
-
-          </div>
-
-          <ul class="project-list">
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/tms.svg" alt="arrival" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Trucking System</h3>
-
-                <p class="project-category">Web Apps <br></p>
-                <p class="project-category"><a href="http:bit.ly/TMS_WMS" target="_blank" title="Trcuking System"
-                    style="color: yellow; text-decoration: none;">Lihat
-                  </a></p>
-
-
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/sap.svg" alt="arrival" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Reporting Data Analytic</h3>
-
-                <p class="project-category">SAP HANA</p>
-                <p class="project-category"><a
-                    href="https://drive.google.com/drive/folders/1n2gOlL2KmQ_pH3JEFlFMvaeltSM-be6E?usp=sharing"
-                    target="_blank" title="SAP HANA" style="color: yellow; text-decoration: none;">Lihat
-                  </a></p>
-
-
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/devops.svg" alt="arrival" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">DevOps</h3>
-
-                <p class="project-category">Docker_NextJS_MongoDB</p>
-                <p class="project-category"><a
-                    href="https://drive.google.com/drive/folders/12CZhZynEnJJlu02TbS-fZiJUQYh0L1kC?usp=sharing"
-                    target="_blank" title="DevOps Orchestration" style="color: yellow; text-decoration: none;">Lihat
-                  </a></p>
-
-
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="https://drive.google.com/drive/folders/1B9-wpZ4dxBBQCKzflqa1Eptrs4dk8iLk" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/webapp2.svg" alt="portfolio" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Customize ERP</h3>
-
-                <p class="project-category">Screenshoot</p>
-                <p class="project-category"><a
-                    href="https://drive.google.com/drive/folders/1B9-wpZ4dxBBQCKzflqa1Eptrs4dk8iLk" target="_blank"
-                    title="Portfolio Baru" style="color: yellow; text-decoration: none;">Lihat
-                  </a></p>
-
-
-
-              </a>
-            </li>
-
-
-
-
-            <!-- <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>                  
-                </figure>
-
-                <h3 class="project-title">Vfs-Payments</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                </figure>
-
-                <h3 class="project-title">VFs-Payments</h3>
-
-                <p class="project-category">Web Scrapping</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  
-                </figure>
-
-                <h3 class="project-title">DSM.</h3>
-
-                <p class="project-category">Web Scrapping</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  
-                </figure>
-
-                <h3 class="project-title">MetaSpark</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  
-                </figure>
-
-                <h3 class="project-title">Summary</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  
-                </figure>
-
-                <h3 class="project-title">Security Manager</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>                
-                </figure>
-
-                <h3 class="project-title">Arrival</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li> -->
-
-          </ul>
-
-        </section>
-
-
-        <section class="skill">
-
-          <h3 class="h3 skills-title">Certified</h3>
-
-          <ul class="skills-list content-card">
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">1. Big Data
-                  <span> <a
-                      href="https://eduparx.id/others/verifyCertificate?number=b3daf2e3-25fe-4f5c-a967-d4d8bc2cdcc2"
-                      target="_blank" title="Show Me" style="color: yellow; text-decoration: none;">
-                      link Certificated - <i>(refresh jika load data lama)</i>
-                    </a> </span>
-                </h5>
-              </div>
-
-
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">2. Google Cloud Fundamentals: Core Infrastructure
-                  <span> <a
-                      href="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~FLT3GEK83EET/CERTIFICATE_LANDING_PAGE~FLT3GEK83EET.jpeg"
-                      target="_blank" title="Show Me" style="color: yellow; text-decoration: none;">
-                      link Certificated - <i>(refresh jika load data lama)</i>
-                    </a> </span>
-                </h5>
-
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">3. Data Warehouse
-                  <span> <a
-                      href="https://eduparx.id/others/verifyCertificate?number=548430ee-b90c-487c-8c07-f61fd39555d4"
-                      target="_blank" title="Show Me" style="color: yellow; text-decoration: none;">
-                      link Certificated - <i>(refresh jika load data lama)</i>
-                    </a> </span>
-                </h5>
-
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">4. Cybersecurity
-                  <span> <a
-                      href="https://eduparx.id/others/verifyCertificate?number=53435138-4bd2-48dd-a34c-6c2fe0de4b88"
-                      target="_blank" title="Show Me" style="color: yellow; text-decoration: none;">
-                      link Certificated - <i>(refresh jika load data lama)</i>
-                    </a> </span>
-                </h5>
-
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">5. Introduction to Information Security
-                  <span> <a
-                      href="https://sert-cyberacademyid.s3.ap-southeast-3.amazonaws.com/course/barisanjuang81704247824/Certificate-of-Completion-Introduction-to-Information-Security.pdf"
-                      target="_blank" title="Show Me" style="color: yellow; text-decoration: none;">
-                      link Certificated - <i>(refresh jika load data lama)</i>
-                    </a> </span>
-                </h5>
-
-              </div>
-
-            </li>
-
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">6. AI and Machine Learning
-                  <span> <a
-                      href="https://eduparx.id/others/verifyCertificate?number=8243cfe5-d674-4345-bf30-311494bf5150"
-                      target="_blank" title="Show Me" style="color: yellow; text-decoration: none;">
-                      link Certificated - <i>(refresh jika load data lama)</i>
-                    </a> </span>
-                </h5>
-              </div>
-
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #BLOG
-      -->
-
-      <article class="blog" data-page="blog">
-
-        <header>
-          <h2 class="h2 article-title">Blog</h2>
-        </header>
-
-        <section class="blog-posts">
-
-          <ul class="blog-posts-list">
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Web security conferences in 2025</h3>
-
-                  <p class="blog-text">
-                    Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2027</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Capture the Flag</h3>
-
-                  <p class="blog-text">
-                    Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Assesment</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2026</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Security model #80</h3>
-
-                  <p class="blog-text">
-                    Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2026</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">UI interactions of the week</h3>
-
-                  <p class="blog-text">
-                    Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
-
-                  <p class="blog-text">
-                    Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #79</h3>
-
-                  <p class="blog-text">
-                    Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #CONTACT
-      -->
-
-      <article class="contact" data-page="contact">
-
-        <header>
-          <h2 class="h2 article-title">Contact</h2>
-        </header>
-
-        <!-- <section class="mapbox" data-mapbox>
-          <figure>
-            <iframe
-              src=<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d33366.061163586935!2d77.48966214095307!3d28.47230290870015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1730310209487!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-              width="400" height="300" loading="lazy"></iframe>
-          </figure>
-        </section> -->
-
-        <section class="contact-form">
-
-          <h3 class="h3 form-title">
-
-            <a href="https://wa.me/6281228018866" target="_blank" style="text-decoration: none;">
-              <button
-                style="padding: 10px 20px; background-color: #25D366; color: white; border: none; border-radius: 5px; cursor: pointer;">
-                Chat via WhatsApp
-              </button>
-            </a>
-
-
-          </h3>
-
-
-
-        </section>
-
-      </article>
-
+      <button id="menuBtn" class="md:hidden text-2xl"><i class="fas fa-bars"></i></button>
     </div>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-secondary border-t border-primary/20">
+      <div class="flex flex-col p-4 gap-2">
+        <a href="#hero" class="p-3 hover:bg-card rounded-lg">Home</a>
+        <a href="#about" class="p-3 hover:bg-card rounded-lg">About</a>
+        <a href="#resume" class="p-3 hover:bg-card rounded-lg">Resume</a>
+        <a href="#portfolio" class="p-3 hover:bg-card rounded-lg">Portfolio</a>
+        <a href="#contact" class="p-3 hover:bg-card rounded-lg">Contact</a>
+      </div>
+    </div>
+  </nav>
 
+  <!-- Main Content -->
+  <main class="pt-16">
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen gradient-bg relative overflow-hidden flex items-center">
+      <div class="hero-glow top-20 right-20"></div>
+      <div class="hero-glow bottom-20 left-1/3"></div>
+      
+      <div class="container mx-auto px-6 lg:px-12 py-12 relative z-10">
+        <div class="grid lg:grid-cols-3 gap-8 items-center">
+          <!-- Left Content -->
+          <div class="lg:col-span-1">
+            <h1 class="text-4xl lg:text-5xl font-bold mb-4">Arie Anggono</h1>
+            <div class="w-16 h-1 bg-primary mb-6"></div>
+            <p class="text-gray-400 leading-relaxed mb-8">
+              Halo, Saya seorang IT System Analyst dengan pengalaman lebih dari 10 tahun di bidang pengembangan dan pengelolaan sistem ERP, SAP S/4HANA, dan Machine Learning.
+            </p>
+            <a href="#contact" class="inline-flex items-center gap-2 border border-primary text-primary px-6 py-3 rounded-full hover:bg-primary hover:text-dark transition">
+              Contact me <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <!-- Center Photo -->
+          <div class="lg:col-span-1 flex justify-center relative">
+            <div class="relative">
+              <div class="absolute -top-4 -left-8 text-center">
+                <p class="text-xs text-gray-400">Finish Project</p>
+                <p class="text-4xl font-bold text-white">20+</p>
+              </div>
+              <img src="static/img/landingpage/fotoProfile.png" alt="Arie Anggono" class="w-64 h-80 object-cover rounded-2xl border-2 border-primary/30">
+              <div class="absolute -bottom-4 -right-8 text-center">
+                <p class="text-xs text-gray-400">Client</p>
+                <p class="text-4xl font-bold text-white">5+</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Stats -->
+          <div class="lg:col-span-1 text-center lg:text-right">
+            <div class="mb-8">
+              <p class="text-sm text-gray-400">Years of Experience</p>
+              <p class="text-6xl font-bold gradient-text">10+</p>
+            </div>
+            <div class="inline-block border border-gray-600 rounded-full w-20 h-20 relative">
+              <svg class="w-full h-full -rotate-90">
+                <circle cx="40" cy="40" r="35" fill="none" stroke="#333" stroke-width="3"/>
+                <circle cx="40" cy="40" r="35" fill="none" stroke="#10b981" stroke-width="3" stroke-dasharray="180 220"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="flex flex-wrap justify-center gap-4 mt-12">          
+          <a href="https://wa.me/6281228018866" target="_blank" class="flex items-center gap-2 bg-card border border-gray-700 px-5 py-2 rounded-full hover:border-primary transition">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+          <a href="mailto:anggono.smg@gmail.com" class="flex items-center gap-2 bg-card border border-gray-700 px-5 py-2 rounded-full hover:border-primary transition">
+            <i class="fas fa-envelope"></i> Email
+          </a>
+        </div>
+
+        <!-- Services Preview -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-16">
+          <div class="glass rounded-xl p-5 card-hover flex items-center gap-4">
+            <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+              <i class="fas fa-code text-primary"></i>
+            </div>
+            <div>
+              <h4 class="font-semibold">Fullstack Developer</h4>
+              <p class="text-sm text-gray-400">10+ Project</p>
+            </div>
+            <i class="fas fa-arrow-right text-primary ml-auto"></i>
+          </div>
+          <div class="glass rounded-xl p-5 card-hover flex items-center gap-4">
+            <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+              <i class="fas fa-database text-primary"></i>
+            </div>
+            <div>
+              <h4 class="font-semibold">SAP ABAPer</h4>
+              <p class="text-sm text-gray-400">20+ Program</p>
+            </div>
+            <i class="fas fa-arrow-right text-primary ml-auto"></i>
+          </div>
+          <div class="glass rounded-xl p-5 card-hover flex items-center gap-4">
+            <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+              <i class="fas fa-brain text-primary"></i>
+            </div>
+            <div>
+              <h4 class="font-semibold">Machine Learning</h4>
+              <p class="text-sm text-gray-400">AI Enthusiast</p>
+            </div>
+            <i class="fas fa-arrow-right text-primary ml-auto"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="min-h-screen p-6 lg:p-12 bg-dark">
+      <h2 class="text-3xl font-bold mb-8 gradient-text">Tentang Saya</h2>
+      <div class="glass rounded-2xl p-6 lg:p-8 mb-8">
+        <p class="text-gray-300 leading-relaxed">
+          Halo, Saya seorang IT System Analyst dengan pengalaman lebih dari 10 tahun di bidang pengembangan dan pengelolaan sistem ERP. Selama 5 tahun pertama, saya fokus pada customisasi ERP dengan aplikasi existing dan legacy berbasis VB6. Kemudian, selama 5 tahun terakhir, saya berkontribusi pada migrasi ERP ke SAP S/4HANA, memastikan proses berjalan lancar dan sistem berjalan optimal.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">ABAP</span>
+          <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">SQL</span>
+          <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">OData Service</span>
+          <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">ERP Optimization</span>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="glass rounded-2xl p-6 card-hover">
+          <h3 class="text-xl font-bold mb-4 flex items-center gap-2"><i class="fas fa-code text-accent"></i> Fullstack Developer</h3>
+          <ul class="space-y-3 text-gray-400">
+            <li class="flex gap-3"><i class="fas fa-check text-green-400 mt-1"></i><span><strong class="text-gray-200">Planning ERP</strong> - Merancang kebutuhan sistem untuk diimplementasikan</span></li>
+            <li class="flex gap-3"><i class="fas fa-check text-green-400 mt-1"></i><span><strong class="text-gray-200">Developing</strong> - Membangun Sistem ERP Customize (Flask) sesuai kebutuhan bisnis</span></li>
+            <li class="flex gap-3"><i class="fas fa-check text-green-400 mt-1"></i><span><strong class="text-gray-200">Implementator</strong> - Testing, Implementasi dan perbaiki bug</span></li>
+          </ul>
+        </div>
+        <div class="glass rounded-2xl p-6 card-hover">
+          <h3 class="text-xl font-bold mb-4 flex items-center gap-2"><i class="fas fa-database text-accent"></i> ABAPer (SAP ABAP Developer)</h3>
+          <ul class="space-y-3 text-gray-400">
+            <li class="flex gap-3"><i class="fas fa-check text-green-400 mt-1"></i><span><strong class="text-gray-200">ABAP Programming</strong> - Menguasai sintaks dan struktur bahasa ABAP</span></li>
+            <li class="flex gap-3"><i class="fas fa-check text-green-400 mt-1"></i><span><strong class="text-gray-200">ALV Reporting</strong> - Membuat laporan menggunakan ALV Grid/Tree</span></li>
+            <li class="flex gap-3"><i class="fas fa-check text-green-400 mt-1"></i><span><strong class="text-gray-200">Data Dictionary</strong> - Mengelola tabel, struktur, domain, dan view</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="min-h-screen p-6 lg:p-12 bg-card/30">
+      <h2 class="text-3xl font-bold mb-8 gradient-text">Resume</h2>
+      
+      <div class="grid lg:grid-cols-2 gap-8">
+        <!-- Experience -->
+        <div>
+          <h3 class="text-xl font-bold mb-6 flex items-center gap-2"><i class="fas fa-briefcase text-primary"></i> Pengalaman</h3>
+          <div class="space-y-6">
+            <div class="glass rounded-xl p-5 border-l-4 border-primary">
+              <span class="text-xs text-accent">Nov 2024 — Des 2025 (1+)</span>
+              <h4 class="font-bold mt-1">Sr. IT Programmer</h4>
+              <p class="text-sm text-gray-400">PT. Hanchen Industrial Indonesia</p>
+              <ul class="mt-2 text-sm text-gray-400 space-y-1">
+                <li>• Fullstack Developer Customize ERP</li>
+                <li>• ERP Implementator</li>
+                <li>• AI Agent ollama on local</li>
+              </ul>
+            </div>
+            <div class="glass rounded-xl p-5 border-l-4 border-accent">
+              <span class="text-xs text-accent">Nov 2011 — Nov 2024 (13+)</span>
+              <h4 class="font-bold mt-1">Sr. IT Analyst</h4>
+              <p class="text-sm text-gray-400">PT. Asia Pacific Fibers</p>
+              <ul class="mt-2 text-sm text-gray-400 space-y-1">
+                <li>• Backend & Frontend Development</li>
+                <li>• ABAPer, Model Training & Development</li>
+                <li>• DevOps Integration</li>
+              </ul>
+            </div>
+            <div class="glass rounded-xl p-5 border-l-4 border-green-500">
+              <span class="text-xs text-accent">Mar 2008 — Nov 2011 (3+)</span>
+              <h4 class="font-bold mt-1">IT Master Control</h4>
+              <p class="text-sm text-gray-400">PT. TVKU Semarang</p>
+              <ul class="mt-2 text-sm text-gray-400 space-y-1">
+                <li>• Database Administrator</li>
+                <li>• Programmer</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div>
+          <h3 class="text-xl font-bold mb-6 flex items-center gap-2"><i class="fas fa-graduation-cap text-primary"></i> Pendidikan</h3>
+          <div class="space-y-6">
+            <div class="glass rounded-xl p-5 border-l-4 border-yellow-500">
+              <span class="text-xs text-accent">Sep 2008 — Apr 2011</span>
+              <h4 class="font-bold mt-1">S1 - Teknik Informatika</h4>
+              <p class="text-sm text-gray-400">Universitas Dian Nuswantoro Semarang</p>
+              <a href="https://pddikti.kemdiktisaintek.go.id/detail-mahasiswa/huiobbuF_p7J0bcIKLKueGE9QR0lFtblcBA664p6jda7TfrlO_COXxrlUP8KFB-v8yQhYA==" target="_blank" class="text-xs text-accent hover:underline mt-2 inline-block"><i class="fas fa-external-link-alt mr-1"></i>Link PDDIKTI</a>
+            </div>
+            <div class="glass rounded-xl p-5 border-l-4 border-pink-500">
+              <span class="text-xs text-accent">Sep 2003 — Apr 2007</span>
+              <h4 class="font-bold mt-1">D3 - Teknik Informatika</h4>
+              <p class="text-sm text-gray-400">Universitas Dian Nuswantoro Semarang</p>
+              <a href="https://pddikti.kemdiktisaintek.go.id/detail-mahasiswa/vxuFYy0BUwrsJiIB43SP1Svkwn5JFaSazzdXHOz5KUl0c0uNpP8TBOjs1l-IXGscw7MNIQ==" target="_blank" class="text-xs text-accent hover:underline mt-2 inline-block"><i class="fas fa-external-link-alt mr-1"></i>Link PDDIKTI</a>
+            </div>
+          </div>
+
+          <h3 class="text-xl font-bold mt-8 mb-6 flex items-center gap-2"><i class="fas fa-trophy text-primary"></i> Achievement</h3>
+          <div class="glass rounded-xl p-5">
+            <ul class="space-y-3 text-sm">
+              <li class="flex gap-3"><i class="fas fa-star text-yellow-400"></i><span><strong>ERP Solution</strong> - Merancang, Development dan Implementasi Custom ERP</span></li>
+              <li class="flex gap-3"><i class="fas fa-star text-yellow-400"></i><span><strong>SAP S/4 HANA</strong> - Migrasi ERP tanpa downtime besar, 20+ program ABAP</span></li>
+              <li class="flex gap-3"><i class="fas fa-star text-yellow-400"></i><span><strong>IT Support</strong> - SLA >96%, Mikrotik & bandwidth management</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <h3 class="text-xl font-bold mt-12 mb-6 flex items-center gap-2"><i class="fas fa-cogs text-primary"></i> Technical Skills</h3>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="glass rounded-xl p-4">
+          <div class="flex justify-between mb-2"><span>Python (Flask, Streamlit, Reflex)</span><span class="text-accent">90%</span></div>
+          <div class="h-2 bg-gray-700 rounded-full"><div class="skill-bar h-full rounded-full" style="width:90%"></div></div>
+        </div>
+        <div class="glass rounded-xl p-4">
+          <div class="flex justify-between mb-2"><span>SQL Syntax</span><span class="text-accent">95%</span></div>
+          <div class="h-2 bg-gray-700 rounded-full"><div class="skill-bar h-full rounded-full" style="width:95%"></div></div>
+        </div>
+        <div class="glass rounded-xl p-4">
+          <div class="flex justify-between mb-2"><span>DevOps (Docker, NextJS, MongoDB)</span><span class="text-accent">80%</span></div>
+          <div class="h-2 bg-gray-700 rounded-full"><div class="skill-bar h-full rounded-full" style="width:80%"></div></div>
+        </div>
+        <div class="glass rounded-xl p-4">
+          <div class="flex justify-between mb-2"><span>Web Development (PHP)</span><span class="text-accent">75%</span></div>
+          <div class="h-2 bg-gray-700 rounded-full"><div class="skill-bar h-full rounded-full" style="width:75%"></div></div>
+        </div>
+        <div class="glass rounded-xl p-4">
+          <div class="flex justify-between mb-2"><span>Machine Learning & AI</span><span class="text-accent">70%</span></div>
+          <div class="h-2 bg-gray-700 rounded-full"><div class="skill-bar h-full rounded-full" style="width:70%"></div></div>
+        </div>
+        <div class="glass rounded-xl p-4">
+          <div class="flex justify-between mb-2"><span>SAP S/4 HANA (MM, PP, SD)</span><span class="text-accent">65%</span></div>
+          <div class="h-2 bg-gray-700 rounded-full"><div class="skill-bar h-full rounded-full" style="width:65%"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="min-h-screen p-6 lg:p-12">
+      <h2 class="text-3xl font-bold mb-8 gradient-text">Portfolio</h2>
+      
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div onclick="openModal('youtube','O56K3g-3-zc')" class="glass rounded-2xl overflow-hidden card-hover group cursor-pointer">
+          <div class="h-40 bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+            <i class="fas fa-truck text-5xl text-white/80"></i>
+          </div>
+          <div class="p-5">
+            <h4 class="font-bold">Trucking System</h4>
+            <p class="text-sm text-gray-400">Web Apps</p>
+          </div>
+        </div>
+        <div onclick="openModal('gallery','ReportingDataAnalytics')" class="glass rounded-2xl overflow-hidden card-hover group cursor-pointer">
+          <div class="h-40 bg-gradient-to-br from-accent to-green-500 flex items-center justify-center">
+            <i class="fas fa-chart-bar text-5xl text-white/80"></i>
+          </div>
+          <div class="p-5">
+            <h4 class="font-bold">Reporting Data Analytic</h4>
+            <p class="text-sm text-gray-400">SAP HANA</p>
+          </div>
+        </div>
+        <div onclick="openModal('gallery','DevOps')" class="glass rounded-2xl overflow-hidden card-hover group cursor-pointer">
+          <div class="h-40 bg-gradient-to-br from-orange-500 to-pink-500 flex items-center justify-center">
+            <i class="fab fa-docker text-5xl text-white/80"></i>
+          </div>
+          <div class="p-5">
+            <h4 class="font-bold">DevOps</h4>
+            <p class="text-sm text-gray-400">Docker, NextJS, MongoDB</p>
+          </div>
+        </div>
+        <div onclick="openModal('gallery','CustomERP')" class="glass rounded-2xl overflow-hidden card-hover group cursor-pointer">
+          <div class="h-40 bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center">
+            <i class="fas fa-cogs text-5xl text-white/80"></i>
+          </div>
+          <div class="p-5">
+            <h4 class="font-bold">Customize ERP</h4>
+            <p class="text-sm text-gray-400">Screenshot</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <h3 class="text-xl font-bold mb-6 flex items-center gap-2"><i class="fas fa-certificate text-primary"></i> Sertifikasi</h3>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <a href="https://eduparx.id/others/verifyCertificate?number=b3daf2e3-25fe-4f5c-a967-d4d8bc2cdcc2" target="_blank" class="glass rounded-xl p-4 flex items-center gap-3 card-hover">
+          <i class="fas fa-award text-2xl text-yellow-400"></i>
+          <span>Big Data</span>
+        </a>
+        <a href="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~FLT3GEK83EET/CERTIFICATE_LANDING_PAGE~FLT3GEK83EET.jpeg" target="_blank" class="glass rounded-xl p-4 flex items-center gap-3 card-hover">
+          <i class="fas fa-award text-2xl text-yellow-400"></i>
+          <span>Google Cloud Fundamentals</span>
+        </a>
+        <a href="https://eduparx.id/others/verifyCertificate?number=548430ee-b90c-487c-8c07-f61fd39555d4" target="_blank" class="glass rounded-xl p-4 flex items-center gap-3 card-hover">
+          <i class="fas fa-award text-2xl text-yellow-400"></i>
+          <span>Data Warehouse</span>
+        </a>
+        <a href="https://eduparx.id/others/verifyCertificate?number=53435138-4bd2-48dd-a34c-6c2fe0de4b88" target="_blank" class="glass rounded-xl p-4 flex items-center gap-3 card-hover">
+          <i class="fas fa-award text-2xl text-yellow-400"></i>
+          <span>Cybersecurity</span>
+        </a>
+        <a href="https://sert-cyberacademyid.s3.ap-southeast-3.amazonaws.com/course/barisanjuang81704247824/Certificate-of-Completion-Introduction-to-Information-Security.pdf" target="_blank" class="glass rounded-xl p-4 flex items-center gap-3 card-hover">
+          <i class="fas fa-award text-2xl text-yellow-400"></i>
+          <span>Information Security</span>
+        </a>
+        <a href="https://eduparx.id/others/verifyCertificate?number=8243cfe5-d674-4345-bf30-311494bf5150" target="_blank" class="glass rounded-xl p-4 flex items-center gap-3 card-hover">
+          <i class="fas fa-award text-2xl text-yellow-400"></i>
+          <span>AI and Machine Learning</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="min-h-screen p-6 lg:p-12 bg-card/30">
+      <h2 class="text-3xl font-bold mb-8 gradient-text">Contact</h2>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="space-y-6">
+          <a href="mailto:anggono.smg@gmail.com" class="glass rounded-2xl p-6 flex items-center gap-4 card-hover block">
+            <div class="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center">
+              <i class="fas fa-envelope text-2xl text-primary"></i>
+            </div>
+            <div>
+              <h4 class="font-bold">Email</h4>
+              <p class="text-gray-400">anggono.smg@gmail.com</p>
+            </div>
+          </a>
+          <a href="https://wa.me/6281228018866" target="_blank" class="glass rounded-2xl p-6 flex items-center gap-4 card-hover block">
+            <div class="w-14 h-14 rounded-full bg-green-500/20 flex items-center justify-center">
+              <i class="fab fa-whatsapp text-2xl text-green-500"></i>
+            </div>
+            <div>
+              <h4 class="font-bold">WhatsApp</h4>
+              <p class="text-gray-400">+62 812-2801-8866</p>
+            </div>
+          </a>
+          <div class="glass rounded-2xl p-6 flex items-center gap-4">
+            <div class="w-14 h-14 rounded-full bg-red-500/20 flex items-center justify-center">
+              <i class="fas fa-location-dot text-2xl text-red-400"></i>
+            </div>
+            <div>
+              <h4 class="font-bold">Location</h4>
+              <p class="text-gray-400">Semarang, Indonesia</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass rounded-2xl p-6">
+          <h3 class="text-xl font-bold mb-4">Kirim Pesan</h3>
+          <form action="mailto:anggono.smg@gmail.com" method="post" enctype="text/plain">
+            <input type="text" name="name" placeholder="Nama" class="w-full bg-dark border border-gray-700 rounded-lg p-3 mb-4 focus:border-primary focus:outline-none">
+            <input type="email" name="email" placeholder="Email" class="w-full bg-dark border border-gray-700 rounded-lg p-3 mb-4 focus:border-primary focus:outline-none">
+            <textarea name="message" rows="4" placeholder="Pesan" class="w-full bg-dark border border-gray-700 rounded-lg p-3 mb-4 focus:border-primary focus:outline-none"></textarea>
+            <button type="submit" class="w-full bg-gradient-to-r from-primary to-accent text-white font-bold py-3 rounded-lg hover:opacity-90 transition">
+              <i class="fas fa-paper-plane mr-2"></i>Kirim
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="p-6 text-center text-gray-500 text-sm border-t border-gray-800">
+      <p>© 2024 Arie Anggono. All rights reserved.</p>
+    </footer>
   </main>
 
+  <!-- Modal -->
+  <div id="modal" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center p-4">
+    <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-3xl hover:text-accent"><i class="fas fa-times"></i></button>
+    <div id="modalContent" class="max-w-5xl w-full max-h-[90vh] overflow-auto"></div>
+  </div>
 
-  <!--
-    - custom js link
-  -->
-  <script src="./assets/js/script.js"></script>
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
 
-  <!--
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    const galleries = {
+      ReportingDataAnalytics: [
+        'static/img/ReportingDataAnalytics/barcodeSystem.png',
+        'static/img/ReportingDataAnalytics/WeigherSys.jpg',
+        'static/img/ReportingDataAnalytics/Screenshot from 2024-11-11 10-01-24.png',
+        'static/img/ReportingDataAnalytics/Screenshot from 2024-11-11 10-01-42.png',
+        'static/img/ReportingDataAnalytics/Screenshot from 2024-11-11 10-01-57.png',
+        'static/img/ReportingDataAnalytics/Screenshot from 2024-11-11 13-54-59.png',
+        'static/img/ReportingDataAnalytics/Screenshot from 2024-11-11 13-57-46.png'
+      ],
+      DevOps: [
+        'static/img/DevOps/Screenshot from 2024-11-12 14-48-41.png',
+        'static/img/DevOps/Screenshot from 2024-11-12 15-14-30.png',
+        'static/img/DevOps/Screenshot from 2024-11-14 10-56-55.png'
+      ],
+      CustomERP: [
+        'static/img/CustomERP/5.png',
+        'static/img/CustomERP/6.png',
+        'static/img/CustomERP/7.png',
+        'static/img/CustomERP/8.png',
+        'static/img/CustomERP/9.png',
+        'static/img/CustomERP/10.png',
+        'static/img/CustomERP/11.png',
+        'static/img/CustomERP/12.png'
+      ]
+    };
 
+    const modal = document.getElementById('modal');
+    const modalContent = document.getElementById('modalContent');
+    let currentGallery = [];
+    let currentIndex = 0;
+
+    function openModal(type, data) {
+      if (type === 'youtube') {
+        modalContent.innerHTML = `<div class="aspect-video"><iframe class="w-full h-full rounded-xl" src="https://www.youtube.com/embed/${data}?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>`;
+      } else if (type === 'gallery') {
+        currentGallery = galleries[data];
+        currentIndex = 0;
+        showGallery();
+      }
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function showGallery() {
+      const thumbs = currentGallery.map((src, i) => 
+        `<img src="${src}" class="h-16 w-24 object-cover rounded cursor-pointer ${i === currentIndex ? 'ring-2 ring-accent' : 'opacity-60 hover:opacity-100'}" onclick="goTo(${i})">`
+      ).join('');
+      modalContent.innerHTML = `
+        <div class="relative">
+          <img src="${currentGallery[currentIndex]}" class="max-h-[70vh] mx-auto rounded-xl">
+          <button onclick="navigate(-1)" class="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/50 rounded-full text-white hover:bg-primary"><i class="fas fa-chevron-left"></i></button>
+          <button onclick="navigate(1)" class="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/50 rounded-full text-white hover:bg-primary"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="flex gap-2 mt-4 overflow-x-auto pb-2 justify-center">${thumbs}</div>
+        <p class="text-center text-gray-400 mt-2 text-sm">${currentIndex + 1} / ${currentGallery.length}</p>`;
+    }
+
+    function navigate(dir) {
+      currentIndex = (currentIndex + dir + currentGallery.length) % currentGallery.length;
+      showGallery();
+    }
+
+    function goTo(i) {
+      currentIndex = i;
+      showGallery();
+    }
+
+    function closeModal() {
+      modal.classList.add('hidden');
+      modalContent.innerHTML = '';
+      document.body.style.overflow = '';
+      currentGallery = [];
+    }
+
+    window.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeModal();
+      if (currentGallery.length && e.key === 'ArrowLeft') navigate(-1);
+      if (currentGallery.length && e.key === 'ArrowRight') navigate(1);
+    });
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+  </script>
 </body>
-
 </html>
