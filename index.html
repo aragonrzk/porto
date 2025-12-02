@@ -23,7 +23,7 @@
   </script>
   <style>
     body { font-family: 'Segoe UI', system-ui, sans-serif; }
-    .gradient-text { background: linear-gradient(135deg, #10b981, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .gradient-text { background: linear-gradient(135deg, #10b981, #34d399); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
     .gradient-bg { background: linear-gradient(135deg, #0d1117 0%, #1a1a2e 50%, #064e3b 100%); }
     .glass { background: rgba(22, 27, 34, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(52, 211, 153, 0.1); }
     .skill-bar { background: linear-gradient(90deg, #10b981, #34d399); }
@@ -43,6 +43,9 @@
         <a href="#resume" class="hover:text-primary transition">Resume</a>
         <a href="#portfolio" class="hover:text-primary transition">Portfolio</a>
         <a href="#contact" class="px-4 py-2 border border-primary text-primary rounded-full hover:bg-primary hover:text-dark transition">Contact</a>
+        <button onclick="toggleLang()" class="flex items-center gap-2 px-3 py-1 glass rounded-full text-sm hover:border-primary transition" title="Translate">
+          <i class="fas fa-language"></i><span id="langLabel">EN</span>
+        </button>
       </div>
       <button id="menuBtn" class="md:hidden text-2xl"><i class="fas fa-bars"></i></button>
     </div>
@@ -54,6 +57,7 @@
         <a href="#resume" class="p-3 hover:bg-card rounded-lg">Resume</a>
         <a href="#portfolio" class="p-3 hover:bg-card rounded-lg">Portfolio</a>
         <a href="#contact" class="p-3 hover:bg-card rounded-lg">Contact</a>
+        <button onclick="toggleLang()" class="p-3 hover:bg-card rounded-lg flex items-center gap-2"><i class="fas fa-language"></i><span id="langLabelMobile">EN</span></button>
       </div>
     </div>
   </nav>
@@ -71,11 +75,11 @@
           <div class="lg:col-span-1">
             <h1 class="text-4xl lg:text-5xl font-bold mb-4">Arie Anggono</h1>
             <div class="w-16 h-1 bg-primary mb-6"></div>
-            <p class="text-gray-400 leading-relaxed mb-8">
+            <p class="text-gray-400 leading-relaxed mb-8" data-id="heroDesc" data-en="Hi, I'm an IT System Analyst with over 10 years of experience in ERP development and management, SAP S/4HANA, and Machine Learning.">
               Halo, Saya seorang IT System Analyst dengan pengalaman lebih dari 10 tahun di bidang pengembangan dan pengelolaan sistem ERP, SAP S/4HANA, dan Machine Learning.
             </p>
             <a href="#contact" class="inline-flex items-center gap-2 border border-primary text-primary px-6 py-3 rounded-full hover:bg-primary hover:text-dark transition">
-              Contact me <i class="fas fa-arrow-right"></i>
+              <span data-id="contactMe" data-en="Contact me">Contact me</span> <i class="fas fa-arrow-right"></i>
             </a>
           </div>
 
@@ -157,9 +161,9 @@
 
     <!-- About Section -->
     <section id="about" class="min-h-screen p-6 lg:p-12 bg-dark">
-      <h2 class="text-3xl font-bold mb-8 gradient-text">Tentang Saya</h2>
+      <h2 class="text-3xl font-bold mb-8 gradient-text" data-id="aboutTitle" data-en="About Me">Tentang Saya</h2>
       <div class="glass rounded-2xl p-6 lg:p-8 mb-8">
-        <p class="text-gray-300 leading-relaxed">
+        <p class="text-gray-300 leading-relaxed" data-id="aboutDesc" data-en="Hi, I'm an IT System Analyst with over 10 years of experience in ERP development and management. During the first 5 years, I focused on ERP customization with existing and legacy VB6-based applications. Then, for the last 5 years, I contributed to ERP migration to SAP S/4HANA, ensuring smooth processes and optimal system performance.">
           Halo, Saya seorang IT System Analyst dengan pengalaman lebih dari 10 tahun di bidang pengembangan dan pengelolaan sistem ERP. Selama 5 tahun pertama, saya fokus pada customisasi ERP dengan aplikasi existing dan legacy berbasis VB6. Kemudian, selama 5 tahun terakhir, saya berkontribusi pada migrasi ERP ke SAP S/4HANA, memastikan proses berjalan lancar dan sistem berjalan optimal.
         </p>
         <div class="mt-4 flex flex-wrap gap-2">
@@ -175,17 +179,17 @@
         <div class="glass rounded-2xl p-6 card-hover">
           <h3 class="text-xl font-bold mb-4 flex items-center gap-2"><i class="fas fa-code text-accent"></i> Fullstack Developer</h3>
           <ul class="space-y-3 text-gray-400">
-            <li class="flex gap-3"><i class="fas fa-check text-green-400 mt-1"></i><span><strong class="text-gray-200">Planning ERP</strong> - Merancang kebutuhan sistem untuk diimplementasikan</span></li>
-            <li class="flex gap-3"><i class="fas fa-check text-green-400 mt-1"></i><span><strong class="text-gray-200">Developing</strong> - Membangun Sistem ERP Customize (Flask) sesuai kebutuhan bisnis</span></li>
-            <li class="flex gap-3"><i class="fas fa-check text-green-400 mt-1"></i><span><strong class="text-gray-200">Implementator</strong> - Testing, Implementasi dan perbaiki bug</span></li>
+            <li class="flex gap-3"><i class="fas fa-check text-green-400 mt-1"></i><span><strong class="text-gray-200">Planning ERP</strong> - <span data-id="planErp" data-en="Designing system requirements for implementation">Merancang kebutuhan sistem untuk diimplementasikan</span></span></li>
+            <li class="flex gap-3"><i class="fas fa-check text-green-400 mt-1"></i><span><strong class="text-gray-200">Developing</strong> - <span data-id="devErp" data-en="Building Custom ERP System (Flask) based on business needs">Membangun Sistem ERP Customize (Flask) sesuai kebutuhan bisnis</span></span></li>
+            <li class="flex gap-3"><i class="fas fa-check text-green-400 mt-1"></i><span><strong class="text-gray-200">Implementator</strong> - <span data-id="implErp" data-en="Testing, Implementation and bug fixing">Testing, Implementasi dan perbaiki bug</span></span></li>
           </ul>
         </div>
         <div class="glass rounded-2xl p-6 card-hover">
           <h3 class="text-xl font-bold mb-4 flex items-center gap-2"><i class="fas fa-database text-accent"></i> ABAPer (SAP ABAP Developer)</h3>
           <ul class="space-y-3 text-gray-400">
-            <li class="flex gap-3"><i class="fas fa-check text-green-400 mt-1"></i><span><strong class="text-gray-200">ABAP Programming</strong> - Menguasai sintaks dan struktur bahasa ABAP</span></li>
-            <li class="flex gap-3"><i class="fas fa-check text-green-400 mt-1"></i><span><strong class="text-gray-200">ALV Reporting</strong> - Membuat laporan menggunakan ALV Grid/Tree</span></li>
-            <li class="flex gap-3"><i class="fas fa-check text-green-400 mt-1"></i><span><strong class="text-gray-200">Data Dictionary</strong> - Mengelola tabel, struktur, domain, dan view</span></li>
+            <li class="flex gap-3"><i class="fas fa-check text-green-400 mt-1"></i><span><strong class="text-gray-200">ABAP Programming</strong> - <span data-id="abapProg" data-en="Mastering ABAP syntax and language structure">Menguasai sintaks dan struktur bahasa ABAP</span></span></li>
+            <li class="flex gap-3"><i class="fas fa-check text-green-400 mt-1"></i><span><strong class="text-gray-200">ALV Reporting</strong> - <span data-id="alvRep" data-en="Creating reports using ALV Grid/Tree">Membuat laporan menggunakan ALV Grid/Tree</span></span></li>
+            <li class="flex gap-3"><i class="fas fa-check text-green-400 mt-1"></i><span><strong class="text-gray-200">Data Dictionary</strong> - <span data-id="dataDict" data-en="Managing tables, structures, domains, and views">Mengelola tabel, struktur, domain, dan view</span></span></li>
           </ul>
         </div>
       </div>
@@ -198,7 +202,7 @@
       <div class="grid lg:grid-cols-2 gap-8">
         <!-- Experience -->
         <div>
-          <h3 class="text-xl font-bold mb-6 flex items-center gap-2"><i class="fas fa-briefcase text-primary"></i> Pengalaman</h3>
+          <h3 class="text-xl font-bold mb-6 flex items-center gap-2"><i class="fas fa-briefcase text-primary"></i> <span data-id="expTitle" data-en="Experience">Pengalaman</span></h3>
           <div class="space-y-6">
             <div class="glass rounded-xl p-5 border-l-4 border-primary">
               <span class="text-xs text-accent">Nov 2024 — Des 2025 (1+)</span>
@@ -234,17 +238,17 @@
 
         <!-- Education -->
         <div>
-          <h3 class="text-xl font-bold mb-6 flex items-center gap-2"><i class="fas fa-graduation-cap text-primary"></i> Pendidikan</h3>
+          <h3 class="text-xl font-bold mb-6 flex items-center gap-2"><i class="fas fa-graduation-cap text-primary"></i> <span data-id="eduTitle" data-en="Education">Pendidikan</span></h3>
           <div class="space-y-6">
             <div class="glass rounded-xl p-5 border-l-4 border-yellow-500">
               <span class="text-xs text-accent">Sep 2008 — Apr 2011</span>
-              <h4 class="font-bold mt-1">S1 - Teknik Informatika</h4>
+              <h4 class="font-bold mt-1" data-id="s1" data-en="Bachelor - Informatics Engineering">S1 - Teknik Informatika</h4>
               <p class="text-sm text-gray-400">Universitas Dian Nuswantoro Semarang</p>
               <a href="https://pddikti.kemdiktisaintek.go.id/detail-mahasiswa/huiobbuF_p7J0bcIKLKueGE9QR0lFtblcBA664p6jda7TfrlO_COXxrlUP8KFB-v8yQhYA==" target="_blank" class="text-xs text-accent hover:underline mt-2 inline-block"><i class="fas fa-external-link-alt mr-1"></i>Link PDDIKTI</a>
             </div>
             <div class="glass rounded-xl p-5 border-l-4 border-pink-500">
               <span class="text-xs text-accent">Sep 2003 — Apr 2007</span>
-              <h4 class="font-bold mt-1">D3 - Teknik Informatika</h4>
+              <h4 class="font-bold mt-1" data-id="d3" data-en="Diploma - Informatics Engineering">D3 - Teknik Informatika</h4>
               <p class="text-sm text-gray-400">Universitas Dian Nuswantoro Semarang</p>
               <a href="https://pddikti.kemdiktisaintek.go.id/detail-mahasiswa/vxuFYy0BUwrsJiIB43SP1Svkwn5JFaSazzdXHOz5KUl0c0uNpP8TBOjs1l-IXGscw7MNIQ==" target="_blank" class="text-xs text-accent hover:underline mt-2 inline-block"><i class="fas fa-external-link-alt mr-1"></i>Link PDDIKTI</a>
             </div>
@@ -253,9 +257,9 @@
           <h3 class="text-xl font-bold mt-8 mb-6 flex items-center gap-2"><i class="fas fa-trophy text-primary"></i> Achievement</h3>
           <div class="glass rounded-xl p-5">
             <ul class="space-y-3 text-sm">
-              <li class="flex gap-3"><i class="fas fa-star text-yellow-400"></i><span><strong>ERP Solution</strong> - Merancang, Development dan Implementasi Custom ERP</span></li>
-              <li class="flex gap-3"><i class="fas fa-star text-yellow-400"></i><span><strong>SAP S/4 HANA</strong> - Migrasi ERP tanpa downtime besar, 20+ program ABAP</span></li>
-              <li class="flex gap-3"><i class="fas fa-star text-yellow-400"></i><span><strong>IT Support</strong> - SLA >96%, Mikrotik & bandwidth management</span></li>
+              <li class="flex gap-3"><i class="fas fa-star text-yellow-400"></i><span><strong>ERP Solution</strong> - <span data-id="ach1" data-en="Design, Development and Implementation of Custom ERP">Merancang, Development dan Implementasi Custom ERP</span></span></li>
+              <li class="flex gap-3"><i class="fas fa-star text-yellow-400"></i><span><strong>SAP S/4 HANA</strong> - <span data-id="ach2" data-en="ERP migration without major downtime, 20+ ABAP programs">Migrasi ERP tanpa downtime besar, 20+ program ABAP</span></span></li>
+              <li class="flex gap-3"><i class="fas fa-star text-yellow-400"></i><span><strong>IT Support</strong> - <span data-id="ach3" data-en="SLA >96%, Mikrotik & bandwidth management">SLA >96%, Mikrotik & bandwidth management</span></span></li>
             </ul>
           </div>
         </div>
@@ -294,48 +298,222 @@
     <!-- Portfolio Section -->
     <section id="portfolio" class="min-h-screen p-6 lg:p-12">
       <h2 class="text-3xl font-bold mb-8 gradient-text">Portfolio</h2>
-      
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-        <div onclick="openModal('youtube','O56K3g-3-zc')" class="glass rounded-2xl overflow-hidden card-hover group cursor-pointer">
-          <div class="h-40 bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-            <i class="fas fa-truck text-5xl text-white/80"></i>
+
+      <!-- Project Cards -->
+      <div class="space-y-6 mb-12">
+        <!-- Project 1: Customize ERP -->
+        <div class="glass rounded-2xl p-6 card-hover">
+          <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center">
+                <i class="fas fa-cogs text-2xl text-white"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg">Customize ERP (Full Integration)</h4>
+                <p class="text-sm text-gray-400">Flask, PostgreSQL, SQLAlchemy, Tabulator.js</p>
+              </div>
+            </div>
+            <button onclick="openModal('gallery','CustomERP')" class="text-primary text-sm hover:underline"><i class="fas fa-images mr-1"></i><span data-id="viewSS" data-en="View Screenshots">Lihat Screenshot</span></button>
           </div>
-          <div class="p-5">
-            <h4 class="font-bold">Trucking System</h4>
-            <p class="text-sm text-gray-400">Web Apps</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-2 py-1 bg-primary/20 text-primary rounded text-xs">HR</span>
+            <span class="px-2 py-1 bg-primary/20 text-primary rounded text-xs">Finance & Payroll</span>
+            <span class="px-2 py-1 bg-primary/20 text-primary rounded text-xs">Inventory/Warehouse</span>
+            <span class="px-2 py-1 bg-primary/20 text-primary rounded text-xs">Production & PPC</span>
+            <span class="px-2 py-1 bg-primary/20 text-primary rounded text-xs">Purchasing</span>
+            <span class="px-2 py-1 bg-primary/20 text-primary rounded text-xs">Exim</span>
+          </div>
+          <div class="grid md:grid-cols-3 gap-4 text-sm">
+            <div class="bg-dark/50 rounded-xl p-4">
+              <h5 class="text-red-400 font-semibold mb-2 flex items-center gap-2"><i class="fas fa-exclamation-circle"></i><span data-id="problem" data-en="Problem">Masalah</span></h5>
+              <p class="text-gray-400" data-id="p1Problem" data-en="Company needed integrated ERP covering all departments with custom scope based on business needs.">Perusahaan butuh ERP terintegrasi seluruh departemen dengan scope custom sesuai kebutuhan bisnis.</p>
+            </div>
+            <div class="bg-dark/50 rounded-xl p-4">
+              <h5 class="text-blue-400 font-semibold mb-2 flex items-center gap-2"><i class="fas fa-lightbulb"></i><span data-id="solution" data-en="Solution">Solusi</span></h5>
+              <ul class="text-gray-400 space-y-1">
+                <li data-id="p1s1" data-en="• Modular ERP: HR, Finance, Inventory, Production, Purchasing, Exim">• ERP modular: HR, Finance, Inventory, Production, Purchasing, Exim</li>
+                <li data-id="p1s2" data-en="• Auto FIFO & Average Costing">• FIFO & Average Costing otomatis</li>
+                <li data-id="p1s3" data-en="• QR-code & cross-department integration">• QR-code & integrasi antar departemen</li>
+                <li data-id="p1s4" data-en="• CI/CD + auto backup & restore">• CI/CD + backup & restore otomatis</li>
+              </ul>
+            </div>
+            <div class="bg-dark/50 rounded-xl p-4">
+              <h5 class="text-green-400 font-semibold mb-2 flex items-center gap-2"><i class="fas fa-chart-line"></i><span data-id="impact" data-en="Impact">Dampak</span></h5>
+              <ul class="text-gray-400 space-y-1">
+                <li data-id="p1i1" data-en="✔ All departments integrated in one system">✔ Semua departemen terintegrasi satu sistem</li>
+                <li data-id="p1i2" data-en="✔ Monthly audit: 3 days → 6 hours">✔ Audit bulanan: 3 hari → 6 jam</li>
+                <li data-id="p1i3" data-en="✔ Became company operational backbone">✔ Jadi backbone operasional perusahaan</li>
+              </ul>
+            </div>
           </div>
         </div>
-        <div onclick="openModal('gallery','ReportingDataAnalytics')" class="glass rounded-2xl overflow-hidden card-hover group cursor-pointer">
-          <div class="h-40 bg-gradient-to-br from-accent to-green-500 flex items-center justify-center">
-            <i class="fas fa-chart-bar text-5xl text-white/80"></i>
+
+        <!-- Project 2: Online Memo QR -->
+        <div class="glass rounded-2xl p-6 card-hover">
+          <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
+                <i class="fas fa-qrcode text-2xl text-white"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg">Online Memo Management System (QR-based)</h4>
+                <p class="text-sm text-gray-400">Flask, PostgreSQL, JavaScript, qrcode.js</p>
+              </div>
+            </div>
           </div>
-          <div class="p-5">
-            <h4 class="font-bold">Reporting Data Analytic</h4>
-            <p class="text-sm text-gray-400">SAP HANA</p>
+          <div class="grid md:grid-cols-3 gap-4 text-sm">
+            <div class="bg-dark/50 rounded-xl p-4">
+              <h5 class="text-red-400 font-semibold mb-2 flex items-center gap-2"><i class="fas fa-exclamation-circle"></i><span data-id="problem" data-en="Problem">Masalah</span></h5>
+              <p class="text-gray-400" data-id="p2Problem" data-en="Manual paper memos caused duplication errors and slow approval process.">Memo manual kertas menyebabkan duplikasi dan proses approval lambat.</p>
+            </div>
+            <div class="bg-dark/50 rounded-xl p-4">
+              <h5 class="text-blue-400 font-semibold mb-2 flex items-center gap-2"><i class="fas fa-lightbulb"></i><span data-id="solution" data-en="Solution">Solusi</span></h5>
+              <ul class="text-gray-400 space-y-1">
+                <li data-id="p2s1" data-en="• Auto 6-digit alphanumeric memo code">• Generate 6-digit alphanumeric code otomatis</li>
+                <li data-id="p2s2" data-en="• QR code generator + printable memo">• QR code generator + printable memo</li>
+                <li data-id="p2s3" data-en="• Memo expiry & usage validation">• Validasi memo expiry & usage</li>
+              </ul>
+            </div>
+            <div class="bg-dark/50 rounded-xl p-4">
+              <h5 class="text-green-400 font-semibold mb-2 flex items-center gap-2"><i class="fas fa-chart-line"></i><span data-id="impact" data-en="Impact">Dampak</span></h5>
+              <ul class="text-gray-400 space-y-1">
+                <li data-id="p2i1" data-en="✔ Reduced manual errors & duplication">✔ Mengurangi kesalahan manual & duplikasi</li>
+                <li data-id="p2i2" data-en="✔ Faster and cleaner approval process">✔ Proses approval lebih cepat dan rapi</li>
+              </ul>
+            </div>
           </div>
         </div>
-        <div onclick="openModal('gallery','DevOps')" class="glass rounded-2xl overflow-hidden card-hover group cursor-pointer">
-          <div class="h-40 bg-gradient-to-br from-orange-500 to-pink-500 flex items-center justify-center">
-            <i class="fab fa-docker text-5xl text-white/80"></i>
+
+        <!-- Project 3: Surat Jalan Generator -->
+        <div class="glass rounded-2xl p-6 card-hover">
+          <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-xl flex items-center justify-center">
+                <i class="fas fa-truck text-2xl text-white"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg">Surat Jalan Generator + Auto Stock Reduction</h4>
+                <p class="text-sm text-gray-400">Flask, PostgreSQL, SQLAlchemy, Bootstrap</p>
+              </div>
+            </div>
+            <button onclick="openModal('youtube','O56K3g-3-zc')" class="text-primary text-sm hover:underline"><i class="fas fa-play-circle mr-1"></i><span data-id="viewDemo" data-en="View Demo">Lihat Demo</span></button>
           </div>
-          <div class="p-5">
-            <h4 class="font-bold">DevOps</h4>
-            <p class="text-sm text-gray-400">Docker, NextJS, MongoDB</p>
+          <div class="grid md:grid-cols-3 gap-4 text-sm">
+            <div class="bg-dark/50 rounded-xl p-4">
+              <h5 class="text-red-400 font-semibold mb-2 flex items-center gap-2"><i class="fas fa-exclamation-circle"></i><span data-id="problem" data-en="Problem">Masalah</span></h5>
+              <p class="text-gray-400" data-id="p3Problem" data-en="Manual delivery note creation caused stock discrepancies and untraceable transactions.">Pembuatan surat jalan manual menyebabkan ketidaksesuaian stok dan transaksi tidak terlacak.</p>
+            </div>
+            <div class="bg-dark/50 rounded-xl p-4">
+              <h5 class="text-blue-400 font-semibold mb-2 flex items-center gap-2"><i class="fas fa-lightbulb"></i><span data-id="solution" data-en="Solution">Solusi</span></h5>
+              <ul class="text-gray-400 space-y-1">
+                <li data-id="p3s1" data-en="• Auto delivery note from product data">• Surat jalan otomatis dari data produk</li>
+                <li data-id="p3s2" data-en="• Real-time auto stock reduction">• Auto pengurangan stok real-time</li>
+                <li data-id="p3s3" data-en="• Validation: reject if stock insufficient">• Validasi: tolak jika stok tidak cukup</li>
+                <li data-id="p3s4" data-en="• All activities logged in history_inout">• Semua aktivitas tercatat di history_inout</li>
+              </ul>
+            </div>
+            <div class="bg-dark/50 rounded-xl p-4">
+              <h5 class="text-green-400 font-semibold mb-2 flex items-center gap-2"><i class="fas fa-chart-line"></i><span data-id="impact" data-en="Impact">Dampak</span></h5>
+              <ul class="text-gray-400 space-y-1">
+                <li data-id="p3i1" data-en="✔ Human error drastically reduced">✔ Human error berkurang drastis</li>
+                <li data-id="p3i2" data-en="✔ More transparent logistics">✔ Logistik lebih transparan</li>
+                <li data-id="p3i3" data-en="✔ All transactions traceable">✔ Semua transaksi dapat ditelusuri</li>
+              </ul>
+            </div>
           </div>
         </div>
-        <div onclick="openModal('gallery','CustomERP')" class="glass rounded-2xl overflow-hidden card-hover group cursor-pointer">
-          <div class="h-40 bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center">
-            <i class="fas fa-cogs text-5xl text-white/80"></i>
+
+        <!-- Project 4: SAP ABAP -->
+        <div class="glass rounded-2xl p-6 card-hover">
+          <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center">
+                <i class="fas fa-database text-2xl text-white"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg">SAP ABAP Custom Module (Enhancement & Integration)</h4>
+                <p class="text-sm text-gray-400">ABAP OO, BAPI, BADI, SAP S/4HANA</p>
+              </div>
+            </div>
+            <button onclick="openModal('gallery','ReportingDataAnalytics')" class="text-primary text-sm hover:underline"><i class="fas fa-images mr-1"></i><span data-id="viewSS" data-en="View Screenshots">Lihat Screenshot</span></button>
           </div>
-          <div class="p-5">
-            <h4 class="font-bold">Customize ERP</h4>
-            <p class="text-sm text-gray-400">Screenshot</p>
+          <div class="grid md:grid-cols-3 gap-4 text-sm">
+            <div class="bg-dark/50 rounded-xl p-4">
+              <h5 class="text-red-400 font-semibold mb-2 flex items-center gap-2"><i class="fas fa-exclamation-circle"></i><span data-id="problem" data-en="Problem">Masalah</span></h5>
+              <p class="text-gray-400" data-id="p4Problem" data-en="SAP users had heavy manual workload and management lacked real-time production tracking.">User SAP memiliki beban manual berat dan management tidak bisa tracking produksi real-time.</p>
+            </div>
+            <div class="bg-dark/50 rounded-xl p-4">
+              <h5 class="text-blue-400 font-semibold mb-2 flex items-center gap-2"><i class="fas fa-lightbulb"></i><span data-id="solution" data-en="Solution">Solusi</span></h5>
+              <ul class="text-gray-400 space-y-1">
+                <li data-id="p4s1" data-en="• Custom production monitoring module">• Modul custom monitoring produksi</li>
+                <li data-id="p4s2" data-en="• Daily reports with dynamic filters">• Laporan harian dengan filter dinamis</li>
+                <li data-id="p4s3" data-en="• External data integration to SAP">• Integrasi data eksternal → SAP</li>
+                <li data-id="p4s4" data-en="• Automation via enhancement points">• Otomasi via enhancement point</li>
+              </ul>
+            </div>
+            <div class="bg-dark/50 rounded-xl p-4">
+              <h5 class="text-green-400 font-semibold mb-2 flex items-center gap-2"><i class="fas fa-chart-line"></i><span data-id="impact" data-en="Impact">Dampak</span></h5>
+              <ul class="text-gray-400 space-y-1">
+                <li data-id="p4i1" data-en="✔ Reduced SAP user manual workload">✔ Mengurangi beban manual user SAP</li>
+                <li data-id="p4i2" data-en="✔ Real-time production output tracking">✔ Tracking real-time output produksi</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: IT Infrastructure -->
+        <div class="glass rounded-2xl p-6 card-hover">
+          <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-teal-500 rounded-xl flex items-center justify-center">
+                <i class="fas fa-server text-2xl text-white"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg">IT Infrastructure Automation & SOP Backup</h4>
+                <p class="text-sm text-gray-400">Linux, Cron, Rsync, Shell Script, Docker</p>
+              </div>
+            </div>
+            <button onclick="openModal('gallery','DevOps')" class="text-primary text-sm hover:underline"><i class="fas fa-images mr-1"></i><span data-id="viewSS" data-en="View Screenshots">Lihat Screenshot</span></button>
+          </div>
+          <div class="grid md:grid-cols-3 gap-4 text-sm">
+            <div class="bg-dark/50 rounded-xl p-4">
+              <h5 class="text-red-400 font-semibold mb-2 flex items-center gap-2"><i class="fas fa-exclamation-circle"></i><span data-id="problem" data-en="Problem">Masalah</span></h5>
+              <p class="text-gray-400" data-id="p5Problem" data-en="No standardized backup procedure, risk of data loss, and long recovery time.">Tidak ada prosedur backup standar, risiko data loss, dan recovery time lama.</p>
+            </div>
+            <div class="bg-dark/50 rounded-xl p-4">
+              <h5 class="text-blue-400 font-semibold mb-2 flex items-center gap-2"><i class="fas fa-lightbulb"></i><span data-id="solution" data-en="Solution">Solusi</span></h5>
+              <ul class="text-gray-400 space-y-1">
+                <li data-id="p5s1" data-en="• Complete backup & restore SOP">• SOP lengkap backup & restore</li>
+                <li data-id="p5s2" data-en="• Auto daily backup script (DB + files)">• Script backup harian otomatis (DB + file)</li>
+                <li data-id="p5s3" data-en="• Backup validation + integrity check">• Validasi backup + integrity check</li>
+                <li data-id="p5s4" data-en="• Standard recovery procedure">• Recovery procedure standar</li>
+              </ul>
+            </div>
+            <div class="bg-dark/50 rounded-xl p-4">
+              <h5 class="text-green-400 font-semibold mb-2 flex items-center gap-2"><i class="fas fa-chart-line"></i><span data-id="impact" data-en="Impact">Dampak</span></h5>
+              <ul class="text-gray-400 space-y-1">
+                <li data-id="p5i1" data-en="✔ Zero data-loss incident">✔ Zero data-loss incident</li>
+                <li data-id="p5i2" data-en="✔ Recovery time < 20 minutes">✔ Recovery time < 20 menit</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
 
+      <!-- Engineering Philosophy -->
+      <div class="glass rounded-2xl p-6 mb-12">
+        <h3 class="text-xl font-bold mb-4 flex items-center gap-2"><i class="fas fa-brain text-primary"></i><span data-id="howIWork" data-en="How I Work (Engineering Philosophy)">Cara Saya Bekerja (Engineering Philosophy)</span></h3>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
+          <div class="flex gap-3"><i class="fas fa-check-circle text-primary mt-1"></i><span data-id="phil1" data-en="End-to-End Mindset → Building solutions that integrate with the business flow, from input to output.">End-to-End Mindset → Membangun solusi yang menyatu dengan alur bisnis, dari input hingga output.</span></div>
+          <div class="flex gap-3"><i class="fas fa-check-circle text-primary mt-1"></i><span data-id="phil2" data-en="Architecture First → Prioritize data structure, reliability, and scalability; UI follows system logic.">Architecture First → Prioritas pada struktur data, reliability, dan scalability; UI mengikuti logika sistem.</span></div>
+          <div class="flex gap-3"><i class="fas fa-check-circle text-primary mt-1"></i><span data-id="phil3" data-en="Business-Driven → Every project must be measurable and have a real impact on operations.">Business-Driven → Setiap proyek harus terukur dan memberi dampak nyata bagi operasional.</span></div>
+          <div class="flex gap-3"><i class="fas fa-check-circle text-primary mt-1"></i><span data-id="phil4" data-en="Documentation Discipline → Ensures the system is easy to maintain with neat SOPs & documentation.">Documentation Discipline → Menjamin sistem mudah dipelihara dengan SOP & dokumentasi yang rapi.</span></div>
+          <div class="flex gap-3"><i class="fas fa-check-circle text-primary mt-1"></i><span data-id="phil5" data-en="Collaborative Engineering → Working across divisions to ensure effective solutions in the field.">Collaborative Engineering → Bekerja lintas divisi untuk memastikan solusi tepat guna di lapangan.</span></div>
+        </div>
+      </div>
+
       <!-- Certifications -->
-      <h3 class="text-xl font-bold mb-6 flex items-center gap-2"><i class="fas fa-certificate text-primary"></i> Sertifikasi</h3>
+      <h3 class="text-xl font-bold mb-6 flex items-center gap-2"><i class="fas fa-certificate text-primary"></i><span data-id="certTitle" data-en="Certifications">Sertifikasi</span></h3>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <a href="https://eduparx.id/others/verifyCertificate?number=b3daf2e3-25fe-4f5c-a967-d4d8bc2cdcc2" target="_blank" class="glass rounded-xl p-4 flex items-center gap-3 card-hover">
           <i class="fas fa-award text-2xl text-yellow-400"></i>
@@ -400,13 +578,13 @@
         </div>
 
         <div class="glass rounded-2xl p-6">
-          <h3 class="text-xl font-bold mb-4">Kirim Pesan</h3>
+          <h3 class="text-xl font-bold mb-4" data-id="sendMsg" data-en="Send Message">Kirim Pesan</h3>
           <form action="mailto:anggono.smg@gmail.com" method="post" enctype="text/plain">
-            <input type="text" name="name" placeholder="Nama" class="w-full bg-dark border border-gray-700 rounded-lg p-3 mb-4 focus:border-primary focus:outline-none">
+            <input type="text" name="name" data-id="namePlace" data-en="Name" placeholder="Nama" class="w-full bg-dark border border-gray-700 rounded-lg p-3 mb-4 focus:border-primary focus:outline-none">
             <input type="email" name="email" placeholder="Email" class="w-full bg-dark border border-gray-700 rounded-lg p-3 mb-4 focus:border-primary focus:outline-none">
-            <textarea name="message" rows="4" placeholder="Pesan" class="w-full bg-dark border border-gray-700 rounded-lg p-3 mb-4 focus:border-primary focus:outline-none"></textarea>
+            <textarea name="message" rows="4" data-id="msgPlace" data-en="Message" placeholder="Pesan" class="w-full bg-dark border border-gray-700 rounded-lg p-3 mb-4 focus:border-primary focus:outline-none"></textarea>
             <button type="submit" class="w-full bg-gradient-to-r from-primary to-accent text-white font-bold py-3 rounded-lg hover:opacity-90 transition">
-              <i class="fas fa-paper-plane mr-2"></i>Kirim
+              <i class="fas fa-paper-plane mr-2"></i><span data-id="sendBtn" data-en="Send">Kirim</span>
             </button>
           </form>
         </div>
@@ -515,6 +693,22 @@
       if (currentGallery.length && e.key === 'ArrowRight') navigate(1);
     });
     modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+
+    // Language Toggle
+    let currentLang = 'id';
+    function toggleLang() {
+      currentLang = currentLang === 'id' ? 'en' : 'id';
+      const label = currentLang === 'id' ? 'EN' : 'ID';
+      document.getElementById('langLabel').textContent = label;
+      const mobileLabel = document.getElementById('langLabelMobile');
+      if (mobileLabel) mobileLabel.textContent = label;
+      document.querySelectorAll('[data-id][data-en]').forEach(el => {
+        if (!el.dataset.original) el.dataset.original = el.placeholder || el.textContent;
+        const val = currentLang === 'en' ? el.dataset.en : el.dataset.original;
+        if (el.placeholder !== undefined && el.tagName !== 'SPAN') el.placeholder = val;
+        else el.textContent = val;
+      });
+    }
   </script>
 </body>
 </html>
