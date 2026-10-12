@@ -220,6 +220,17 @@ Memiliki kompetensi tambahan dalam Purchasing IT Device & Infrastructure, melipu
                 <li>• AI Agent ollama on local</li>
               </ul>
             </div>
+            <div class="glass rounded-xl p-5 border-l-4 border-teal-400">
+              <span class="text-xs text-accent">Jan 2019 — Nov 2024 (5+)</span>
+              <h4 class="font-bold mt-1">Sr. IT Inventory</h4>
+              <p class="text-sm text-gray-400">PT. Asia Pacific Fibers</p>
+              <ul class="mt-2 text-sm text-gray-400 space-y-1">
+                <li>• Inventory Management: bahan baku, barang dalam proses (WIP) & barang jadi</li>
+                <li>• Integrasi ERP lokal dengan INSW (Indonesia National Single Window) & CEISA 4.0 DJBC</li>
+                <li>• Neraca persediaan, Kartu Kendali & audit kawasan berikat</li>
+                <li>• Pengembangan modul inventory berbasis barcode (FIFO & average costing)</li>
+              </ul>
+            </div>
             <div class="glass rounded-xl p-5 border-l-4 border-accent">
               <span class="text-xs text-accent">Nov 2011 — Nov 2024 (13+)</span>
               <h4 class="font-bold mt-1">Sr. IT Analyst</h4>
@@ -297,6 +308,10 @@ Memiliki kompetensi tambahan dalam Purchasing IT Device & Infrastructure, melipu
         <div class="glass rounded-xl p-4">
           <div class="flex justify-between mb-2"><span>SAP S/4 HANA (MM, PP, SD)</span><span class="text-accent">75%</span></div>
           <div class="h-2 bg-gray-700 rounded-full"><div class="skill-bar h-full rounded-full" style="width:65%"></div></div>
+        </div>
+        <div class="glass rounded-xl p-4">
+          <div class="flex justify-between mb-2"><span>Inventory Management & INSW Integration (Bahan Baku, WIP, Barang Jadi)</span><span class="text-accent">90%</span></div>
+          <div class="h-2 bg-gray-700 rounded-full"><div class="skill-bar h-full rounded-full" style="width:90%"></div></div>
         </div>
       </div>
     </section>
@@ -520,6 +535,87 @@ Memiliki kompetensi tambahan dalam Purchasing IT Device & Infrastructure, melipu
             </div>
           </div>
         </div>
+        <!-- Project 6: IT Inventory Management System -->
+        <div class="glass rounded-2xl p-6 card-hover">
+          <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 bg-gradient-to-br from-emerald-500 to-lime-500 rounded-xl flex items-center justify-center">
+                <i class="fas fa-boxes-stacked text-2xl text-white"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg">Inventory Management System (Bahan Baku, Barang Jadi & WIP)</h4>
+                <p class="text-sm text-gray-400">ERP Lokal + Integrasi INSW (DJBC/CEISA 4.0), PostgreSQL, Barcode/QR, FIFO & Average Costing</p>
+              </div>
+            </div>
+            <button onclick="openModal('gallery','ITInventory')" class="text-primary text-sm hover:underline"><i class="fas fa-images mr-1"></i><span data-id="viewSS" data-en="View Screenshots">Lihat Screenshot</span></button>
+          </div>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-2 py-1 bg-primary/20 text-primary rounded text-xs">Bahan Baku</span>
+            <span class="px-2 py-1 bg-primary/20 text-primary rounded text-xs">Barang Dalam Proses (WIP)</span>
+            <span class="px-2 py-1 bg-primary/20 text-primary rounded text-xs">Barang Jadi</span>
+            <span class="px-2 py-1 bg-primary/20 text-primary rounded text-xs">Barcode / QR</span>
+            <span class="px-2 py-1 bg-primary/20 text-primary rounded text-xs">FIFO & Average Costing</span>
+            <span class="px-2 py-1 bg-primary/20 text-primary rounded text-xs">Stock Opname</span>
+            <span class="px-2 py-1 bg-primary/20 text-primary rounded text-xs">Kartu Kendali</span>
+            <span class="px-2 py-1 bg-orange-500/20 text-orange-400 rounded text-xs">INSW — DJBC/CEISA 4.0</span>
+          </div>
+
+          <!-- Carousel Screenshot Project (webp) -->
+          <div id="invTrack" class="relative rounded-xl overflow-hidden border border-gray-700 bg-dark/60 select-none mb-4">
+            <div class="relative flex items-center justify-center bg-black/40">
+              <img id="invImg" src="assets/images/1.webp" alt="IT Inventory screenshot" class="max-h-[480px] w-full object-contain" draggable="false">
+              <button onclick="invNav(-1)" aria-label="Previous" class="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 bg-black/60 hover:bg-primary text-white rounded-full flex items-center justify-center transition"><i class="fas fa-chevron-left"></i></button>
+              <button onclick="invNav(1)" aria-label="Next" class="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 bg-black/60 hover:bg-primary text-white rounded-full flex items-center justify-center transition"><i class="fas fa-chevron-right"></i></button>
+              <span id="invCounter" class="absolute top-3 right-3 text-xs bg-black/70 px-3 py-1 rounded-full text-gray-200">1 / 11</span>
+            </div>
+            <div class="p-4 lg:p-5 bg-dark/50">
+              <h5 id="invTitle" class="font-semibold text-accent mb-1">1. Dashboard IT Inventory</h5>
+              <p id="invDesc" class="text-sm text-gray-400 leading-relaxed">—</p>
+              <div id="invDots" class="flex gap-2 mt-4 flex-wrap"></div>
+            </div>
+            <div id="invThumbs" class="flex gap-2 overflow-x-auto p-3 border-t border-gray-800"></div>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-4 text-sm">
+            <div class="bg-dark/50 rounded-xl p-4">
+              <h5 class="text-red-400 font-semibold mb-2 flex items-center gap-2"><i class="fas fa-exclamation-circle"></i><span data-id="problem" data-en="Problem">Masalah</span></h5>
+              <p class="text-gray-400" data-id="p6Problem" data-en="Raw material, WIP, and finished goods records were separated from customs documents — warehouse balances were often inconsistent with DJBC data and audits took a long time.">Pencatatan persediaan bahan baku, barang dalam proses, dan barang jadi terpisah dari dokumen pabean — neraca gudang sering tidak konsisten dengan data DJBC dan audit berjalan lama.</p>
+            </div>
+            <div class="bg-dark/50 rounded-xl p-4">
+              <h5 class="text-blue-400 font-semibold mb-2 flex items-center gap-2"><i class="fas fa-lightbulb"></i><span data-id="solution" data-en="Solution">Solusi</span></h5>
+              <ul class="text-gray-400 space-y-1">
+                <li data-id="p6s1" data-en="• Integrated stock modules: raw materials, work-in-process (WIP), finished goods & spare parts">• Modul persediaan terintegrasi: bahan baku, barang dalam proses (WIP), barang jadi & sparepart</li>
+                <li data-id="p6s2" data-en="• Auto-generate customs documents (PIB/PEB, BC 2.7/2.5/3.4/4.0) via INSW from ERP transactions">• Auto-generate dokumen pabean (PIB/PEB, BC 2.7/2.5/3.4/4.0) via INSW dari transaksi ERP</li>
+                <li data-id="p6s3" data-en="• Automatic FIFO & average costing + barcode/QR per item">• FIFO & average costing otomatis + barcode/QR per item</li>
+                <li data-id="p6s4" data-en="• Stock opname & reconciliation of balances vs customs documents (Kartu Kendali)">• Stock opname & rekonsiliasi neraca vs dokumen pabean (Kartu Kendali)</li>
+              </ul>
+            </div>
+            <div class="bg-dark/50 rounded-xl p-4">
+              <h5 class="text-green-400 font-semibold mb-2 flex items-center gap-2"><i class="fas fa-chart-line"></i><span data-id="impact" data-en="Impact">Dampak</span></h5>
+              <ul class="text-gray-400 space-y-1">
+                <li data-id="p6i1" data-en="✔ Warehouse balances consistent with DJBC data (zero discrepancy)">✔ Neraca gudang konsisten dengan data DJBC (zero discrepancy)</li>
+                <li data-id="p6i2" data-en="✔ Bonded zone audits much faster & transparent">✔ Audit kawasan berikat jauh lebih cepat & transparan</li>
+                <li data-id="p6i3" data-en="✔ Drastically reduced redundancy in customs document creation">✔ Redundansi pembuatan dokumen pabean berkurang drastis</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- INSW Integration Info -->
+          <div class="mt-4 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/30 rounded-xl p-4">
+            <h5 class="text-blue-400 font-semibold mb-3 flex items-center gap-2">
+              <i class="fas fa-network-wired"></i>
+              <span data-id="inswTitle" data-en="INSW Integration — Indonesia National Single Window (Local ERP ↔ Customs)">Integrasi INSW — Indonesia National Single Window (ERP Lokal ↔ Sistem Pabean)</span>
+            </h5>
+            <p class="text-gray-400 text-sm mb-3" data-id="inswDesc" data-en="INSW is the single national electronic platform for submitting customs documents and trade permits, as mandated by Customs Law No. 17/2006 and the ASEAN Single Window commitment. Through this integration, the local ERP connects directly to DJBC (CEISA 4.0).">INSW (Indonesia National Single Window) adalah sistem elektronik nasional tunggal untuk penyampaian dokumen dan data pabean serta perizinan perdagangan, sesuai amanat UU No. 17 Tahun 2006 tentang Kepabeanan dan komitmen ASEAN Single Window. Melalui integrasi ini, ERP lokal terhubung langsung dengan sistem DJBC (CEISA 4.0).</p>
+            <ul class="text-gray-400 text-sm space-y-2">
+              <li class="flex items-start gap-2" data-id="insw1" data-en="✔ Customs documents (PIB/PEB, BC 2.7, BC 2.5, BC 3.4, BC 4.0) auto-generated from ERP transactions"><i class="fas fa-check text-green-400 mt-1"></i>Dokumen pabean (PIB/PEB, BC 2.7, BC 2.5, BC 3.4, BC 4.0) auto-generate dari transaksi ERP</li>
+              <li class="flex items-start gap-2" data-id="insw2" data-en="✔ Real-time balances of raw materials, WIP & finished goods aligned with bonded zone Kartu Kendali"><i class="fas fa-check text-green-400 mt-1"></i>Neraca persediaan bahan baku, WIP & barang jadi real-time selaras dengan Kartu Kendali kawasan berikat</li>
+              <li class="flex items-start gap-2" data-id="insw3" data-en="✔ Document response status (approve/reject) received back into ERP in real time"><i class="fas fa-check text-green-400 mt-1"></i>Status respon dokumen (approve/reject) diterima balik ke ERP secara real-time</li>
+              <li class="flex items-start gap-2" data-id="insw4" data-en="✔ Reduces document input redundancy & minimizes declaration errors"><i class="fas fa-check text-green-400 mt-1"></i>Mengurangi redundansi input dokumen & memperkecil potensi kesalahan penebusan</li>
+              <li class="flex items-start gap-2" data-id="insw5" data-en="✔ Complete audit trail — always ready for DJBC audits"><i class="fas fa-check text-green-400 mt-1"></i>Jejak audit lengkap — siap diperiksa audit DJBC kapan pun</li>
+            </ul>
+          </div>
+        </div>
       </div>
 
       <!-- Engineering Philosophy -->
@@ -615,7 +711,7 @@ Memiliki kompetensi tambahan dalam Purchasing IT Device & Infrastructure, melipu
 
     <!-- Footer -->
     <footer class="p-6 text-center text-gray-500 text-sm border-t border-gray-800">
-      <p>© 2025</p>
+      <p>© aragon</p>
     </footer>
   </main>
 
@@ -636,6 +732,7 @@ Memiliki kompetensi tambahan dalam Purchasing IT Device & Infrastructure, melipu
     });
 
     const galleries = {
+      ITInventory: [], // diisi otomatis dari hasil deteksi file .webp di assets/images/
       ReportingDataAnalytics: [
         'static/img/ReportingDataAnalytics/barcodeSystem.png',
         'static/img/ReportingDataAnalytics/WeigherSys.jpg',
@@ -736,7 +833,131 @@ Memiliki kompetensi tambahan dalam Purchasing IT Device & Infrastructure, melipu
         if (el.placeholder !== undefined && el.tagName !== 'SPAN') el.placeholder = val;
         else el.textContent = val;
       });
+      renderInvCarousel();
     }
+
+    // ===== Inventory Carousel — AUTO-DETECT semua file .webp di assets/images/ =====
+    // Keterangan per slide — key = nomor file (1.webp → 1). File baru tanpa keterangan memakai caption default.
+    const invCaptionBank = {
+      1: { id: { title: 'Dashboard Inventory', desc: 'Monitoring stok bahan baku, barang dalam proses (WIP), dan barang jadi beserta nilai persediaan real-time dalam satu tampilan terpadu.' },
+          en: { title: 'Inventory Dashboard', desc: 'Real-time monitoring of raw materials, work-in-process (WIP), and finished goods stock along with inventory value in one unified view.' } },
+      2: { id: { title: 'Master Data Barang', desc: 'Klasifikasi bahan baku, barang jadi, barang dalam proses & sparepart: kode barang, satuan, konversi, dan pemetaan HS Code untuk kebutuhan dokumen pabean.' },
+          en: { title: 'Item Master Data', desc: 'Classification of raw materials, finished goods, WIP & spare parts: item codes, units of measure, conversions, and HS Code mapping for customs documents.' } },
+      3: { id: { title: 'Penerimaan Bahan Baku (Goods Receipt)', desc: 'Penerimaan barang impor (dokumen BC 2.7) dan pembelian lokal (BC 2.5) otomatis menambah stok sekaligus membentuk dokumen pabean sesuai ketentuan INSW.' },
+          en: { title: 'Raw Material Goods Receipt', desc: 'Imported goods receipt (BC 2.7) and local purchases (BC 2.5) automatically increase stock and generate customs documents per INSW rules.' } },
+      4: { id: { title: 'Kartu Kendali & Neraca Persediaan', desc: 'Neraca persediaan per barang dengan pola masuk–keluar–saldo yang tersambung ke dokumen pabean, sesuai format pemantauan kawasan berikat DJBC.' },
+          en: { title: 'Kartu Kendali & Stock Balance', desc: 'Per-item stock balance with in–out–balance pattern linked to customs documents, following the DJBC bonded zone monitoring format.' } },
+      5: { id: { title: 'Produksi — Barang Dalam Proses (WIP)', desc: 'Pemakaian bahan baku ke order produksi dan penyelesaian menjadi barang jadi tercatat otomatis; nilai WIP terkontrol per work order.' },
+          en: { title: 'Production — Work In Process (WIP)', desc: 'Raw material consumption to production orders and completion into finished goods are recorded automatically; WIP value is controlled per work order.' } },
+      6: { id: { title: 'Mutasi & Transfer Gudang', desc: 'Perpindahan barang antar gudang/blok dengan approval berjenjang dan riwayat mutasi lengkap — stok selalu mutakhir di semua lokasi.' },
+          en: { title: 'Warehouse Mutation & Transfer', desc: 'Inter-warehouse/block transfers with tiered approval and complete movement history — stock stays up to date across all locations.' } },
+      7: { id: { title: 'Stock Opname & Rekonsiliasi', desc: 'Pemindaian barcode untuk stock opname berkala: rekonsiliasi fisik vs sistem vs dokumen pabean, selisih dilaporkan otomatis.' },
+          en: { title: 'Stock Opname & Reconciliation', desc: 'Barcode scanning for periodic counts: physical vs system vs customs document reconciliation with automatic discrepancy reporting.' } },
+      8: { id: { title: 'Pengeluaran Barang Jadi', desc: 'Penjualan ekspor (BC 3.4) dan pasar dalam negeri (BC 4.0): surat jalan otomatis, pengurangan stok real-time, dokumen pabean ter-generate.' },
+          en: { title: 'Finished Goods Outbound', desc: 'Export sales (BC 3.4) and domestic market (BC 4.0): automatic delivery notes, real-time stock reduction, and generated customs documents.' } },
+      9: { id: { title: 'Integrasi API INSW', desc: 'Submit dokumen pabean (PIB/PEB/BC) langsung dari ERP lokal ke DJBC melalui INSW/CEISA 4.0, lengkap dengan pantauan status respon real-time.' },
+          en: { title: 'INSW API Integration', desc: 'Submit customs documents (PIB/PEB/BC) straight from the local ERP to DJBC via INSW/CEISA 4.0, complete with real-time response status tracking.' } },
+      10: { id: { title: 'Audit & Kepatuhan DJBC', desc: 'Laporan audit kawasan berikat, rekonsiliasi neraca vs Kartu Kendali, dan jejak transaksi lengkap yang siap diperiksa kapan pun.' },
+          en: { title: 'DJBC Audit & Compliance', desc: 'Bonded zone audit reports, balance vs Kartu Kendali reconciliation, and a complete transaction trail ready for inspection anytime.' } },
+      11: { id: { title: 'Reporting & Analitik Persediaan', desc: 'Laporan nilai persediaan (FIFO/average), analisis slow-moving vs fast-moving, dan rekap dokumen pabean siap unduh (Excel/PDF).' },
+          en: { title: 'Inventory Reporting & Analytics', desc: 'Inventory valuation reports (FIFO/average), slow-moving vs fast-moving analysis, and downloadable customs document recaps (Excel/PDF).' } }
+    };
+    const invDefaultCaption = {
+      id: { title: 'Tampilan Sistem Inventory', desc: 'Screenshot tambahan sistem Inventory Management (bahan baku, barang dalam proses, barang jadi) yang terintegrasi dengan INSW.' },
+      en: { title: 'Inventory System View', desc: 'Additional screenshot of the Inventory Management system (raw materials, WIP, finished goods) integrated with INSW.' }
+    };
+
+    const inventorySlides = []; // terisi OTOMATIS dari hasil deteksi file .webp
+
+    function invProbeWebp(n) {
+      return new Promise(resolve => {
+        const img = new Image();
+        img.onload = () => resolve(true);
+        img.onerror = () => resolve(false);
+        img.src = 'assets/images/' + n + '.webp';
+      });
+    }
+
+    async function invDiscoverSlides() {
+      for (let n = 1; n <= 500; n++) {
+        if (!(await invProbeWebp(n))) break; // berhenti di nomor file pertama yang tidak ditemukan
+        inventorySlides.push({ src: 'assets/images/' + n + '.webp', ...(invCaptionBank[n] || invDefaultCaption) });
+      }
+    }
+
+    let invIndex = 0, invTimer = null;
+    const invDots = document.getElementById('invDots');
+    const invThumbs = document.getElementById('invThumbs');
+
+    function invBuildControls() {
+      inventorySlides.forEach((s, i) => {
+        const dot = document.createElement('button');
+        dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+        dot.onclick = () => invGo(i);
+        invDots.appendChild(dot);
+        const th = document.createElement('img');
+        th.src = s.src; th.alt = s.id.title; th.loading = 'lazy';
+        th.className = 'h-14 w-24 object-cover rounded cursor-pointer shrink-0 transition border border-gray-700';
+        th.onclick = () => invGo(i);
+        invThumbs.appendChild(th);
+      });
+    }
+
+    (async () => {
+      await invDiscoverSlides();
+      galleries.ITInventory = inventorySlides.map(s => s.src); // modal "Lihat Screenshot" ikut otomatis
+      invBuildControls();
+      renderInvCarousel();
+      invAutoStart();
+    })();
+
+    function renderInvCarousel() {
+      if (!inventorySlides.length) return;
+      const s = inventorySlides[invIndex];
+      const lang = currentLang === 'en' ? s.en : s.id;
+      document.getElementById('invImg').src = s.src;
+      document.getElementById('invTitle').textContent = (invIndex + 1) + '. ' + lang.title;
+      document.getElementById('invDesc').textContent = lang.desc;
+      document.getElementById('invCounter').textContent = (invIndex + 1) + ' / ' + inventorySlides.length;
+      [...invDots.children].forEach((b, i) => {
+        b.className = i === invIndex
+          ? 'w-7 h-2 rounded-full bg-primary transition-all'
+          : 'w-2 h-2 rounded-full bg-gray-600 hover:bg-gray-400 transition-all';
+      });
+      [...invThumbs.children].forEach((t, i) => {
+        t.classList.toggle('ring-2', i === invIndex);
+        t.classList.toggle('ring-accent', i === invIndex);
+        t.classList.toggle('opacity-40', i !== invIndex);
+      });
+    }
+    function invNav(d) { if (!inventorySlides.length) return; invIndex = (invIndex + d + inventorySlides.length) % inventorySlides.length; renderInvCarousel(); }
+    function invGo(i) { invIndex = i; renderInvCarousel(); invAutoStart(); } // pilih manual → autoplay lanjut dari slide terpilih
+    function invAutoStart() { invAutoStop(); invTimer = setInterval(() => invNav(1), 6000); }
+    function invAutoStop() { if (invTimer) { clearInterval(invTimer); invTimer = null; } }
+
+    const invTrack = document.getElementById('invTrack');
+    invTrack.addEventListener('mouseenter', invAutoStop);
+    invTrack.addEventListener('mouseleave', invAutoStart);
+    let invTouchX = null;
+    invTrack.addEventListener('touchstart', e => { invTouchX = e.touches[0].clientX; }, { passive: true });
+    invTrack.addEventListener('touchend', e => {
+      if (invTouchX === null) return;
+      const dx = e.changedTouches[0].clientX - invTouchX;
+      if (Math.abs(dx) > 50) invNav(dx < 0 ? 1 : -1);
+      invTouchX = null;
+    }, { passive: true });
+
+    window.addEventListener('keydown', e => {
+      if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+      if (!modal.classList.contains('hidden')) return;
+      const r = invTrack.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) {
+        e.preventDefault();
+        invNav(e.key === 'ArrowRight' ? 1 : -1);
+      }
+    });
+
+    // init carousel dijalankan otomatis oleh IIFE di atas setelah deteksi .webp selesai
   </script>
 </body>
 </html>
